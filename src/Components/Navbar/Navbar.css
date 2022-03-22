@@ -18,10 +18,7 @@
   width: fit-content;
   gap: 15px;
 }
-.nav-name-text {
-  font-family: "Kaushan Script", cursive;
-  color: var(--purple-medium);
-}
+
 .hamburgur-icon {
   font-size: 2rem;
   margin-left: 10px;
