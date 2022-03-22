@@ -14,6 +14,8 @@ body {
   --bg-color: #fdf4ff;
   --grey-light: #d6d3d1;
   --stone-black: #57534e;
+  --grey-lighter: #cbd5e1;
+  --black-color: black;
 }
 .flex-row-only {
   display: flex;
