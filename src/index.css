@@ -11,11 +11,13 @@ body {
   --purple-medium: #a21caf;
   --purple-dark: #d946ef;
   --purple-light: #e879f9;
+  --purple-lighter: #f0abfc;
   --bg-color: #fdf4ff;
   --grey-light: #d6d3d1;
   --stone-black: #57534e;
   --grey-lighter: #cbd5e1;
   --black-color: black;
+  /* --check-color: #e879f9; */
 }
 .flex-row-only {
   display: flex;

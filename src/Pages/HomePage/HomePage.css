@@ -6,7 +6,7 @@
   max-height: 22rem;
   max-width: 36rem;
   padding: 5px;
-  border: 2px solid var(--purple-light);
+  border: 2px solid var(--stone-black);
   border-radius: 3px;
   margin: 0 2rem;
   transition: 0.4s;
@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5rem;
-  background-color: var(--bg-color);
+  background-color: var(--purple-lighter);
   padding: 5rem 0;
 }
 
@@ -53,5 +53,8 @@
   }
   .category-banner-display {
     margin-top: 4rem;
+  }
+  .banners-display {
+    flex-direction: column;
   }
 }

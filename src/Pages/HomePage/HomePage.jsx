@@ -1,24 +1,20 @@
+import axios from "axios";
 import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 export const HomePage = () => {
-  const temporaryCategoryHolder = [
-    {
-      img: "./assets/comedy1.jpg",
-      button: "Comedy",
-    },
-    {
-      img: "./assets/music3.jpg",
-      button: "Music",
-    },
-    {
-      img: "./assets/realityShow2.jpg",
-      button: "Reality Shows",
-    },
-    {
-      img: "./assets/ankurWarikoo4.jpg",
-      button: "Knowledge",
-    },
-  ];
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/api/categories");
+        setCategory(response.data.categories);
+      } catch {
+        console.error("error occured");
+      }
+    })();
+  });
   return (
     <>
       <div>
@@ -37,17 +33,26 @@ export const HomePage = () => {
             favorite shows with
             <span className="nav-name-text"> RangerTV</span>.
           </p>
-
-          {temporaryCategoryHolder.map((item) => (
-            <div className="flex-col individual-banner">
-              <div className="category-banner flex-row">
-                <img src={item.img} alt="" className="responsive-img banner" />
+          <div className="flex-row banners-display">
+            {category.map((item) => (
+              <div className="flex-col individual-banner">
+                <div className="category-banner flex-row">
+                  <Link to="/video-listing-page">
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="responsive-img banner"
+                    />
+                  </Link>
+                </div>
+                <Link to="/video-listing-page">
+                  <button className=" text-align-center category-heading">
+                    {item.categoryName}
+                  </button>
+                </Link>
               </div>
-              <button className=" text-align-center category-heading">
-                {item.button}
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>
