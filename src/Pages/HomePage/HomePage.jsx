@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
+
 export const HomePage = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
