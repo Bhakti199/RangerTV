@@ -8,8 +8,10 @@ export const HomePage = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get("/api/categories");
-        setCategory(response.data.categories);
+        const {
+          data: { categories },
+        } = await axios.get("/api/categories");
+        setCategory(categories);
       } catch {
         console.error("error occured");
       }
