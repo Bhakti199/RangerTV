@@ -1,0 +1,57 @@
+.video-listing-page {
+  margin-top: 5.7rem;
+  margin-left: 7rem;
+  width: auto;
+  height: 95vh;
+  background-color: var(--bg-color);
+  padding: 2rem;
+}
+
+.search-input-container-two {
+  display: none;
+  background-color: var(--white-color);
+  border-radius: 3px;
+  width: fit-content;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+.search {
+  padding: 0.4rem 1rem;
+  /* width: 20rem; */
+  border-radius: 3px;
+  gap: 1rem;
+}
+.search-input {
+  padding: 0.3rem;
+  text-align: left;
+  font-size: 1rem;
+  border-radius: 3px;
+  padding: 3px;
+  border: none;
+  outline: none;
+  width: 20rem;
+}
+.category-chips-container {
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.category-chips {
+  padding: 0.5rem 1rem;
+  font-weight: 100;
+  border-radius: 3px;
+  border: 1px solid var(--purple-medium);
+  color: var(--stone-black);
+}
+.category-chips:hover {
+  background-color: var(--purple-medium);
+  color: var(--white-color);
+}
+@media screen and (max-width: 900px) {
+  .video-listing-page {
+    margin-left: 0;
+  }
+  .search-input-container-two {
+    display: flex;
+  }
+}

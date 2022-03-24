@@ -1,0 +1,31 @@
+.sidebar-container {
+  margin-top: 0rem;
+  width: 7rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 5.7rem;
+  /* display: flex; */
+  align-items: center;
+  box-shadow: 2px 4px 7px 2px rgb(0 0 0 / 10%);
+  background-color: var(--white-color);
+}
+.sidebar {
+  padding-left: 0;
+  gap: 2rem;
+}
+.sidebar-item {
+  list-style: none;
+  gap: 0.5rem;
+}
+.sidebar-icon {
+  font-size: 1.5rem;
+}
+.sidebar-item-text {
+  font-size: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .sidebar-container {
+    display: none;
+  }
+}

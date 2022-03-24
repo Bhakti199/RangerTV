@@ -12,12 +12,16 @@ body {
   --purple-dark: #d946ef;
   --purple-light: #e879f9;
   --purple-lighter: #f0abfc;
-  --bg-color: #fdf4ff;
+  --bg-color: #fae8ff;
   --grey-light: #d6d3d1;
   --stone-black: #57534e;
   --grey-lighter: #cbd5e1;
   --black-color: black;
+  --grey-medium: #4b5563;
   /* --check-color: #e879f9; */
+}
+.flex {
+  display: flex;
 }
 .flex-row-only {
   display: flex;
@@ -58,6 +62,11 @@ button {
 }
 button:hover {
   filter: brightness(75%);
+  cursor: pointer;
+}
+.link {
+  text-decoration: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   html {

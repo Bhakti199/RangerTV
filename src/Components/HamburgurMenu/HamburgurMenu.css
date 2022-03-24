@@ -4,14 +4,14 @@
 .hamburgur-menu {
   padding: 1rem;
   position: fixed;
-  margin-top: 3rem;
+  margin-top: 2.6rem;
   z-index: 3;
   top: 3rem;
   left: 0;
   list-style: none;
-  background-color: var(--light-color);
+  background-color: var(--purple-lighter);
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   transform: 0.3s ease-in-out;
 }
@@ -19,11 +19,16 @@
   color: black;
   margin-bottom: 2rem;
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 100;
   text-decoration: none;
   gap: 15px;
 }
 .hamburgur-menu-item:hover {
   cursor: pointer;
   color: var(--purple-medium);
+}
+@media only screen and (max-width: 900px) {
+  .hamburgur-menu {
+    display: flex;
+  }
 }

@@ -22,6 +22,10 @@
 .hamburgur-icon {
   font-size: 2rem;
   margin-left: 10px;
+  display: none;
+}
+.hamburgur-display {
+  display: none;
 }
 .search-input-container {
   border: 1px solid black;
@@ -53,11 +57,20 @@
 .login-nav {
   margin-right: 1.2rem;
 }
+.hamburgur-display {
+  display: none;
+}
 @media only screen and (max-width: 900px) {
   .search-input-container {
     display: none;
   }
   .login-nav {
     margin-left: auto;
+  }
+  .hamburgur-icon {
+    display: flex;
+  }
+  .hamburgur-display {
+    display: flex;
   }
 }

@@ -5,12 +5,14 @@ import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { HamburgurMenuList } from "../Index";
+import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="nav">
+        {}
         <div className="flex-row nav-name">
           {isOpen ? (
             <MdCancel
@@ -42,7 +44,7 @@ export const Navbar = () => {
           <FaUserAlt className="profile-icon " />
           <p className="margin-top-bottom-zero">Login</p>
         </div>
-        {isOpen && <HamburgurMenuList />}
+        {isOpen && <HamburgurMenuList className="hamburgur-display" />}
       </div>
     </>
   );

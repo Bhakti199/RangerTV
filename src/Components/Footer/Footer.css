@@ -1,6 +1,7 @@
 .footer {
   padding: 3rem 0;
   background-color: #94a3b8;
+  z-index: 6;
 }
 .heart-icon {
   color: var(--purple-medium);

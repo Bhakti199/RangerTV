@@ -6,7 +6,8 @@
 export const videos = [
   {
     _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
+    img: "./assets/comedy1.webp",
+    title: "Friends Best Moments From Season 2",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     creator: "Soham Shah",
