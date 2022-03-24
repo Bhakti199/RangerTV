@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
+import { Footer } from "../../Components/Index";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 
@@ -17,7 +18,7 @@ export const HomePage = () => {
         console.error("error occured");
       }
     })();
-  });
+  }, []);
   return (
     <>
       <div>
@@ -38,7 +39,7 @@ export const HomePage = () => {
           </p>
           <div className="flex-row banners-display">
             {category.map((item) => (
-              <div className="flex-col individual-banner">
+              <div className="flex-col individual-banner" key={item._id}>
                 <div className="category-banner flex-row">
                   <Link to="/video-listing-page">
                     <img
@@ -57,6 +58,7 @@ export const HomePage = () => {
             ))}
           </div>
         </div>
+        <Footer className="footer-display" />
       </div>
     </>
   );
