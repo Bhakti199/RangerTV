@@ -136,7 +136,7 @@ export const videos = [
     owner: "Still Watching Netflix",
     views: "8.9M",
     date: "Jul 10, 2019",
-    categoryName: "Thriler",
+    categoryName: "Thriller",
   },
   {
     _id: uuid(),
@@ -145,7 +145,7 @@ export const videos = [
     owner: "Netflix",
     views: "24M",
     date: "Oct 13, 2017",
-    categoryName: "Thriler",
+    categoryName: "Thriller",
   },
   {
     _id: uuid(),
@@ -154,7 +154,7 @@ export const videos = [
     owner: "Stranger Things",
     views: "10.9M",
     date: "Oct 15, 2019",
-    categoryName: "Thriler",
+    categoryName: "Thriller",
   },
   {
     _id: uuid(),
@@ -163,7 +163,7 @@ export const videos = [
     owner: "Blazor26",
     views: "10.7M",
     date: "Jun 8, 2015",
-    categoryName: "Thriler",
+    categoryName: "Thriller",
   },
   {
     _id: uuid(),
@@ -173,6 +173,6 @@ export const videos = [
     owner: "Khaleesi",
     views: "20M",
     date: "Oct 19, 2021",
-    categoryName: "Thriler",
+    categoryName: "Thriller",
   },
 ];

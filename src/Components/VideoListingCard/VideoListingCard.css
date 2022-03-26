@@ -2,7 +2,7 @@
   padding: 3rem;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
 }
 .video-img {
   height: 12rem;
