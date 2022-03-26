@@ -1,24 +1,11 @@
-import axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
 import { Footer } from "../../Components/Index";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
+import { useMainContext } from "../../Context/Index";
 
 export const HomePage = () => {
-  const [category, setCategory] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const {
-          data: { categories },
-        } = await axios.get("/api/categories");
-        setCategory(categories);
-      } catch {
-        console.error("error occured");
-      }
-    })();
-  }, []);
+  const { category } = useMainContext();
   return (
     <>
       <div>

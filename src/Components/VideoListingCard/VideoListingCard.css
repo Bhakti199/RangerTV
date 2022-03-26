@@ -1,3 +1,9 @@
+.card-display-grid {
+  padding: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+}
 .video-img {
   height: 12rem;
   width: 21rem;
@@ -5,6 +11,7 @@
   border-radius: 3px;
 }
 .video-card {
+  position: relative;
   flex-direction: column;
   height: 21rem;
   width: 21rem;
@@ -42,6 +49,22 @@
   color: var(--grey-medium);
   font-weight: 100;
 }
+.card-drawer-section {
+  z-index: 1;
+  box-shadow: 2px 4px 7px 2px rgb(0 0 0 / 10%);
+  position: absolute;
+  top: 14rem;
+  right: 1.7rem;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+.card-drawer-item {
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  font-weight: 100;
+}
 @media screen and (max-width: 900px) {
   .video-card {
     width: 17rem;
@@ -50,5 +73,20 @@
   .video-img {
     width: 17rem;
     height: 10rem;
+  }
+  .card-drawer-section {
+    top: 12rem;
+    min-height: fit-content;
+    bottom: 2rem;
+  }
+  .card-drawer-item {
+    padding: 10px 1.5rem;
+  }
+  .video-card {
+    margin-top: 2rem;
+  }
+  .card-display-grid {
+    padding: 1rem;
+    gap: 2rem;
   }
 }

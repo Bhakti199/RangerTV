@@ -2,9 +2,10 @@
   margin-top: 5.7rem;
   margin-left: 7rem;
   width: auto;
-  height: 95vh;
+  height: 100%;
   background-color: var(--bg-color);
   padding: 2rem;
+  /* overflow: scroll; */
 }
 
 .search-input-container-two {
