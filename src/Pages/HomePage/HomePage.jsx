@@ -12,7 +12,7 @@ export const HomePage = () => {
         <div className="landing-page flex-row">
           <div className="banner-img-holder">
             <img
-              src="./assets/banner.jpg"
+              src="https://ik.imagekit.io/yol3sixl2xj/banner_7g4V5pZ84.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375299352"
               alt=""
               className="responsive-img"
             ></img>

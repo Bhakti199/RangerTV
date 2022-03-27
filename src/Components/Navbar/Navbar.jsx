@@ -5,7 +5,6 @@ import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { HamburgurMenuList } from "../Index";
-import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +25,11 @@ export const Navbar = () => {
             />
           )}
 
-          <img src="./assets/RangerTV.jpg" alt="" className="nav-logo" />
+          <img
+            src="https://ik.imagekit.io/yol3sixl2xj/RangerTV_OJtBllc2D.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648374923579"
+            alt=""
+            className="nav-logo"
+          />
           <h1 className="nav-name-text">RangerTV</h1>
         </div>
 
