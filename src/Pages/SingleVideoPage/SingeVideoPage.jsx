@@ -10,11 +10,8 @@ import { useMainContext } from "../../Context/Index";
 import { Sidebar } from "../../Components/Index";
 export const SingeVideoPage = () => {
   const videoId = useParams();
-  console.log(videoId);
   const { videos } = useMainContext();
-  console.log(videos);
   let video = videos.find((item) => item._id === videoId.videoId);
-  console.log(video);
   return (
     <>
       <div className="single-video-page flex">
