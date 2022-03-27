@@ -6,8 +6,8 @@ import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
-    _id: uuid(),
-    img: "./assets/comedy2.webp",
+    _id: "9-hmg1UHySY",
+    img: "https://ik.imagekit.io/yol3sixl2xj/comedy2_slQYoBTEP.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648375300833",
     title:
       "Friends: Phoebe, Chandler and Monica Babysit The Triplets (Season 6 Clip) | TBS",
     owner: "TBS",
@@ -16,8 +16,8 @@ export const videos = [
     categoryName: "Comedy",
   },
   {
-    _id: uuid(),
-    img: "./assets/comedy1.webp",
+    _id: "7rDeTPxIz-Q",
+    img: "https://ik.imagekit.io/yol3sixl2xj/comedy1_BhvXxjkjR.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648375300047",
     title: "Friends Best Moments From Season 2",
     owner: "Clash World",
     views: "380k",
@@ -25,8 +25,8 @@ export const videos = [
     categoryName: "Comedy",
   },
   {
-    _id: uuid(),
-    img: "./assets/comedy3.webp",
+    _id: "L5STHzbIglg",
+    img: "https://ik.imagekit.io/yol3sixl2xj/comedy3_06qgAQ6oM.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648375301073",
     title:
       "Friends: The Friends Meet Rachel’s Spoiled Sister, Jill (Season 6 Clip) | TBS",
     owner: "TBS",
@@ -35,8 +35,8 @@ export const videos = [
     categoryName: "Comedy",
   },
   {
-    _id: uuid(),
-    img: "./assets/comedy4.webp",
+    _id: "JVZMcBoEhT4",
+    img: "https://ik.imagekit.io/yol3sixl2xj/comedy4_QUeSyDTeY.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648375301397",
     title:
       "Friends: Monica Is Jealous Phoebe Picks Rachel To Date (Season 6 Clip) | TBS",
     owner: "TBS",
@@ -45,8 +45,8 @@ export const videos = [
     categoryName: "Comedy",
   },
   {
-    _id: uuid(),
-    img: "./assets/comedy5.webp",
+    _id: "a6HJkshGqEQ",
+    img: "https://ik.imagekit.io/yol3sixl2xj/comedy5_IXUv8W-QC.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1648375301731",
     title: "Friends: Ross' Fake British Accent (Season 6 Clip) | TBS",
     owner: "TBS",
     views: "768k",
@@ -54,8 +54,8 @@ export const videos = [
     categoryName: "Comedy",
   },
   {
-    _id: uuid(),
-    img: "./assets/action1.jpg",
+    _id: "tCuRbIInrOo",
+    img: "https://ik.imagekit.io/yol3sixl2xj/action1_6W68E9f8a.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375297810",
     title: "Best Of Spider Man Saves",
     owner: "MovieZ4U",
     views: "17.5M",
@@ -63,8 +63,8 @@ export const videos = [
     categoryName: "Action",
   },
   {
-    _id: uuid(),
-    img: "./assets/action2.jpg",
+    _id: "UGjlrq67Eh8",
+    img: "https://ik.imagekit.io/yol3sixl2xj/action2_EXRXVLlb9.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375297867",
     title: "SPIDER-MAN Vs VENOM Best Action Scenes 4K ᴴᴰ",
     owner: "ONE Media",
     views: "8.5M",
@@ -72,8 +72,8 @@ export const videos = [
     categoryName: "Action",
   },
   {
-    _id: uuid(),
-    img: "./assets/action3.jpg",
+    _id: "43si9s7ulU8",
+    img: "https://ik.imagekit.io/yol3sixl2xj/action3_PoeYx6WU3X.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375297955",
     title:
       "Spider-Man vs Sandman - Subway Fight Scene - Spider-Man 3 (2007) Movie CLIP HD",
     owner: "TopMovieClips",
@@ -82,8 +82,8 @@ export const videos = [
     categoryName: "Action",
   },
   {
-    _id: uuid(),
-    img: "./assets/action4.jpg",
+    _id: "tdMaz-x8BAI",
+    img: "https://ik.imagekit.io/yol3sixl2xj/action4_qHoRcn8RL.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375298386",
     title: "Avengers: Endgame | Final Battle #1 | 4K 60fps",
     owner: "The Entertainment Analyst",
     views: "780k",
@@ -91,8 +91,8 @@ export const videos = [
     categoryName: "Action",
   },
   {
-    _id: uuid(),
-    img: "./assets/action5.jpg",
+    _id: "dE1P4zDhhqw",
+    img: "https://ik.imagekit.io/yol3sixl2xj/action5_bhjI_Z3Ch.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375299014",
     title:
       "Captain America Avengers Assemble Scene - Portal Scene - Avengers : Endgame (2019) Scene",
     owner: "BestScene",
@@ -102,8 +102,8 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
-    img: "./assets/horror2.jpg",
+    _id: "1HCXqsIaGyA",
+    img: "https://ik.imagekit.io/yol3sixl2xj/horror2_v_JHOVV-T.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375302618",
     title:
       "The Little Hours FULL MOVIE 2017 English Sub || Alison Brie, Dave Franco, Kate Micucci",
     owner: "は Wedang Tuak",
@@ -112,8 +112,8 @@ export const videos = [
     categoryName: "Horror",
   },
   {
-    _id: uuid(),
-    img: "./assets/horror3.jpg",
+    _id: "evzsN1BGR6A",
+    img: "https://ik.imagekit.io/yol3sixl2xj/horror3_s3-J7a_Ev.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375303145",
     title: "The Nun: Escape the Abbey 360",
     owner: "Warner Bros. Pictures",
     views: "5.9M",
@@ -121,8 +121,8 @@ export const videos = [
     categoryName: "Horror",
   },
   {
-    _id: uuid(),
-    img: "./assets/horror4.jpg",
+    _id: "bQWwdfKnrOo",
+    img: "https://ik.imagekit.io/yol3sixl2xj/horror4_Gh8etIsDk.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375303471",
     title: "The Woman in Black (1989)",
     owner: "Rock n Roll Martian",
     views: "15k",
@@ -130,8 +130,8 @@ export const videos = [
     categoryName: "Horror",
   },
   {
-    _id: uuid(),
-    img: "./assets/thriller1.jpg",
+    _id: "bVo3T6Jh56E",
+    img: "https://ik.imagekit.io/yol3sixl2xj/thriller1_FJCtqs3fr.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375304586",
     title: "Eleven & Mike's Cutest Moments | Stranger Things S1-3",
     owner: "Still Watching Netflix",
     views: "8.9M",
@@ -139,8 +139,8 @@ export const videos = [
     categoryName: "Thriller",
   },
   {
-    _id: uuid(),
-    img: "./assets/thriller2.jpg",
+    _id: "R1ZXOOLMJ8s",
+    img: "https://ik.imagekit.io/yol3sixl2xj/thriller2_Sfw_cr75q.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375304889",
     title: "Stranger Things 2 | Official Final Trailer | Netflix",
     owner: "Netflix",
     views: "24M",
@@ -148,8 +148,8 @@ export const videos = [
     categoryName: "Thriller",
   },
   {
-    _id: uuid(),
-    img: "./assets/Thriller3.jpg",
+    _id: "q_coTUUlhwQ",
+    img: "https://ik.imagekit.io/yol3sixl2xj/Thriller3_sj_MYdfLs.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375305639",
     title: "The 11 Spookiest Monster Moments | Stranger Things | Netflix",
     owner: "Stranger Things",
     views: "10.9M",
@@ -157,8 +157,8 @@ export const videos = [
     categoryName: "Thriller",
   },
   {
-    _id: uuid(),
-    img: "./assets/Thriller4.jpg",
+    _id: "WZVG7THSvBY",
+    img: "https://ik.imagekit.io/yol3sixl2xj/Thriller4_60kpvxT5T.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375305826",
     title: "Legendary Dragon Scene Game of Thrones Season 5 (HD)",
     owner: "Blazor26",
     views: "10.7M",
@@ -166,8 +166,8 @@ export const videos = [
     categoryName: "Thriller",
   },
   {
-    _id: uuid(),
-    img: "./assets/Thriller5.jpg",
+    _id: "V4PPWYCqPKo",
+    img: "https://ik.imagekit.io/yol3sixl2xj/thriller5_BoHAsD5EZ.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375306432",
     title:
       "Epic Dragon Scene Game of Thrones Season 3 Daenerys Targaryen Rise to Power (Part 1) (HD)",
     owner: "Khaleesi",

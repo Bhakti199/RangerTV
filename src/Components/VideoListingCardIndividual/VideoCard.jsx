@@ -1,6 +1,7 @@
 import React from "react";
 import { BsDot, BsThreeDotsVertical } from "react-icons/bs";
 import { MdAddCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "../../Components/VideoListingCard/VideoListingCard.css";
 import { useState } from "react";
 export const VideoCard = ({ item }) => {
@@ -9,10 +10,12 @@ export const VideoCard = ({ item }) => {
     <>
       <div className="flex-row" key={item.id}>
         <div className="video-card flex">
-          <img src={item.img} className="video-img responsive-img"></img>
+          <Link to={`/video-listing-page/${item._id}`}>
+            <img src={item.img} className="video-img responsive-img"></img>
+          </Link>
           <div className="video-card-text-container">
             <p className="flex-row-only video-title-container">
-              <span className="video-title">{item.title}</span>
+              <span className="video-title link">{item.title}</span>
               <span>
                 <BsThreeDotsVertical
                   className="video-card-icon"

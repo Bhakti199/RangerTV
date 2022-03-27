@@ -68,6 +68,12 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+.link-color {
+  color: var(--black-color);
+}
+.link:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 600px) {
   html {
     font-size: 85%;
