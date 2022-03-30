@@ -1,7 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./Components/Index";
-import { HomePage, SingeVideoPage, VideoListingPage } from "./Pages/Index";
+import {
+  HomePage,
+  LikedVideosPage,
+  PlayListPage,
+  SingeVideoPage,
+  VideoListingPage,
+  WatchLaterPage,
+} from "./Pages/Index";
 function App() {
   return (
     <div className="App">
@@ -13,6 +20,9 @@ function App() {
           path="/video-listing-page/:videoId"
           element={<SingeVideoPage />}
         />
+        <Route path="/watch-later" element={<WatchLaterPage />} />
+        <Route path="/liked-videos" element={<LikedVideosPage />} />
+        <Route path="/playlists" element={<PlayListPage />}></Route>
       </Routes>
     </div>
   );

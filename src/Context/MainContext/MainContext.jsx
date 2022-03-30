@@ -1,7 +1,13 @@
 import axios from "axios";
 import React from "react";
-import { useContext, createContext, useState, useEffect } from "react";
-
+import {
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  useReducer,
+} from "react";
+import { sidebarManagement } from "./SidebarManagementReducer";
 const MainContext = createContext([]);
 
 const MainContextProvider = ({ children }) => {
@@ -32,8 +38,17 @@ const MainContextProvider = ({ children }) => {
       }
     })();
   }, []);
+
+  const initialValueSidebar = {
+    watchLater: [],
+    playList: [],
+    likedVideos: [],
+    historyList: [],
+  };
+  const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
+  console.log(state);
   return (
-    <MainContext.Provider value={{ category, videos }}>
+    <MainContext.Provider value={{ category, videos, state, dispatch }}>
       {children}
     </MainContext.Provider>
   );

@@ -48,6 +48,9 @@ iframe {
 }
 
 @media screen and (max-width: 900px) {
+  .single-video-page {
+    margin-left: 0;
+  }
   iframe {
     width: 25rem;
   }

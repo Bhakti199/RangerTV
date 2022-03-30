@@ -21,7 +21,6 @@
 }
 .video-card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
 }
 .video-card-text-container {
   padding: 10px;
@@ -60,11 +59,20 @@
   background-color: var(--bg-color);
 }
 .card-drawer-item {
-  align-items: center;
   gap: 5px;
   padding: 10px;
   font-weight: 100;
 }
+.card-drawer-item-display {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 100;
+}
+.playlist-input {
+  margin: 0 1rem;
+}
+
 @media screen and (max-width: 900px) {
   .video-card {
     width: 17rem;

@@ -18,6 +18,7 @@ body {
   --grey-lighter: #cbd5e1;
   --black-color: black;
   --grey-medium: #4b5563;
+  --red-color: #dc2626;
   /* --check-color: #e879f9; */
 }
 .flex {
@@ -73,6 +74,9 @@ button:hover {
 }
 .link:hover {
   cursor: pointer;
+}
+.text-center {
+  text-align: center;
 }
 @media screen and (max-width: 600px) {
   html {

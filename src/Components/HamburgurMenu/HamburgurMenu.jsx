@@ -20,26 +20,39 @@ export const HamburgurMenuList = () => {
           <FaUserAlt />
           Login/SignUp
         </Link>
+
         <Link
-          to="/product-listing"
-          className="hamburgur-menu-item flex-row-only"
+          to="/video-listing-page"
+          className="hamburgur-menu-item flex-row-only link link-color"
         >
           <MdVideoLibrary />
           Explore shows
         </Link>
-        <Link to="/wishlist-page" className="hamburgur-menu-item flex-row-only">
+        <Link
+          to="/"
+          className="hamburgur-menu-item flex-row-only link link-color"
+        >
           <RiPlayList2Fill />
           PlayList
         </Link>
-        <Link to="/cart-page" className="hamburgur-menu-item flex-row-only">
+        <Link
+          to="/watch-later"
+          className="hamburgur-menu-item flex-row-only link link-color"
+        >
           <BsFillBookmarkFill />
           Watch Later
         </Link>
-        <Link to="/cart-page" className="hamburgur-menu-item flex-row-only">
+        <Link
+          to="/liked-videos"
+          className="hamburgur-menu-item flex-row-only link link-color"
+        >
           <AiFillLike />
           Liked videos
         </Link>
-        <Link to="/" className="hamburgur-menu-item flex-row-only">
+        <Link
+          to="/"
+          className="hamburgur-menu-item flex-row-only link link-color"
+        >
           <IoIosInformationCircle />
           About us
         </Link>

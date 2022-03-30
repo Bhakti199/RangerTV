@@ -10,8 +10,14 @@ import { useMainContext } from "../../Context/Index";
 import { Sidebar } from "../../Components/Index";
 export const SingeVideoPage = () => {
   const videoId = useParams();
-  const { videos } = useMainContext();
+  const { videos, state } = useMainContext();
   let video = videos.find((item) => item._id === videoId.videoId);
+  state.historyList =
+    state.historyList.length === 0
+      ? [video]
+      : state.historyList.some((item) => item._id === video._id)
+      ? state.historyList
+      : [...state.historyList, video];
   return (
     <>
       <div className="single-video-page flex">
@@ -24,13 +30,13 @@ export const SingeVideoPage = () => {
             allowFullScreen
           ></iframe>
           <div className="singlepage-video-section-two">
-            <p className="singlepage-video-title">{video.title}</p>
+            <p className="singlepage-video-title">{video?.title}</p>
             <p className="margin-top-bottom-zero singlepage-video-owner">
-              {video.owner}
+              {video?.owner}
             </p>
             <p className=" flex margin-top-bottom-zero singlepage-video-card-genre">
-              {video.categoryName} <BsDot /> {video.views} <BsDot />
-              {video.date}
+              {video?.categoryName} <BsDot /> {video?.views} <BsDot />
+              {video?.date}
             </p>
             <div className="video-iframe-icons-container flex">
               <span className="video-iframe-icons flex">
