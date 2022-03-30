@@ -44,8 +44,9 @@
 }
 .watch-later-cancel-button {
   font-size: 1.8rem;
-  padding: 0;
-  color: var(--bg-color);
+  padding: 1px;
+  background-color: var(--red-color);
+  color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;

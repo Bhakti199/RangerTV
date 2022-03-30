@@ -1,6 +1,6 @@
 import React from "react";
 import { BsDot } from "react-icons/bs";
-import { MdOutlineCancelPresentation } from "react-icons/md";
+import { TiFolderDelete } from "react-icons/ti";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
 import { useMainContext } from "../../Context/Index";
@@ -30,13 +30,13 @@ export const WatchLaterCard = ({ videoList, title }) => {
                 {video.date}
               </p>
             </div>
-            <span className="watch-later-cancel-button">
-              <MdOutlineCancelPresentation
+            <button className="watch-later-cancel-button">
+              <TiFolderDelete
                 onClick={() =>
                   dispatch({ type: `REMOVE_FROM_${title}`, payload: video })
                 }
               />
-            </span>
+            </button>
           </div>
         ))}
     </>

@@ -128,7 +128,20 @@ export const VideoCard = ({ item }) => {
                       element.videoList.some(
                         (video) => video._id === item._id
                       ) ? (
-                        ""
+                        <div
+                          key={index}
+                          className="card-drawer-item margin-top-bottom-zero flex"
+                          onClick={() => {
+                            dispatch({
+                              type: "REMOVE_FROM_PLAYLIST",
+                              payload: { title: element.title, video: item },
+                            });
+                            setIsDrawerOpen(!isDrawerOpen);
+                          }}
+                        >
+                          <AiFillCheckCircle />
+                          Remove from {element.title}
+                        </div>
                       ) : (
                         <div
                           key={index}
@@ -141,7 +154,8 @@ export const VideoCard = ({ item }) => {
                             setIsDrawerOpen(!isDrawerOpen);
                           }}
                         >
-                          <AiFillFolderAdd /> {element.title}
+                          <AiFillFolderAdd />
+                          Add to {element.title}
                         </div>
                       )
                     )}

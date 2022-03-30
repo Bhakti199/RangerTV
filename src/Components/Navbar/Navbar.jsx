@@ -47,7 +47,12 @@ export const Navbar = () => {
           <FaUserAlt className="profile-icon " />
           <p className="margin-top-bottom-zero">Login</p>
         </div>
-        {isOpen && <HamburgurMenuList className="hamburgur-display" />}
+        {isOpen && (
+          <HamburgurMenuList
+            className="hamburgur-display"
+            setIsOpen={setIsOpen}
+          />
+        )}
       </div>
     </>
   );
