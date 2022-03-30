@@ -10,9 +10,15 @@ export const LikedVideosPage = () => {
   return (
     <div>
       <Sidebar />
+
       <div className="watch-later-page">
         <h2>Liked Videos</h2>
-        <WatchLaterCard videoList={state.likedVideos} title={"LIKED_VIDEOS"} />
+        <div className="watch-later-container">
+          <WatchLaterCard
+            videoList={state.likedVideos}
+            title={"LIKED_VIDEOS"}
+          />
+        </div>
       </div>
     </div>
   );

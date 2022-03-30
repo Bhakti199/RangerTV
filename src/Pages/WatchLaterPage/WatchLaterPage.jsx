@@ -10,9 +10,12 @@ export const WatchLaterPage = () => {
   return (
     <div>
       <Sidebar />
+
       <div className="watch-later-page">
         <h2>Watch Later</h2>
-        <WatchLaterCard videoList={state.watchLater} title={"WATCH_LATER"} />
+        <div className="watch-later-container">
+          <WatchLaterCard videoList={state.watchLater} title={"WATCH_LATER"} />
+        </div>
       </div>
     </div>
   );
