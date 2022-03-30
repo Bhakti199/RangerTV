@@ -1,6 +1,6 @@
 import React from "react";
 import { BsDot } from "react-icons/bs";
-import { MdOutlineCancelPresentation } from "react-icons/md";
+import { TiFolderDelete } from "react-icons/ti";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
 import { useMainContext } from "../../Context/Index";
@@ -31,7 +31,7 @@ export const NewPlayListDisplay = ({ title, videoList }) => {
               </p>
             </div>
             <span className="watch-later-cancel-button">
-              <MdOutlineCancelPresentation
+              <TiFolderDelete
                 onClick={() =>
                   dispatch({
                     type: "REMOVE_FROM_PLAYLIST",
