@@ -4,7 +4,6 @@
   width: auto;
   min-height: 85vh;
   height: 100%;
-  background-color: var(--bg-color);
   padding: 2rem;
 }
 .watch-later-container {

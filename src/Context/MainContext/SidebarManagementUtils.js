@@ -1,22 +1,17 @@
-export const addToVideoList = (videoList, itemToAdd) => {
-  if (videoList.length === 0) return [itemToAdd];
-  else {
-    if (videoList.some((item) => item._id === itemToAdd._id)) return videoList;
-    else return [...videoList, itemToAdd];
-  }
-};
+export const addToVideoList = (videoList, itemToAdd) =>
+  videoList.some((item) => item._id === itemToAdd._id)
+    ? videoList
+    : [...videoList, itemToAdd];
 
 export const removeFromVideoList = (videoList, itemToRemove) => {
   if (videoList.length > 0)
     return videoList.filter((item) => item._id !== itemToRemove._id);
-  else return [];
+  return [];
 };
 
-export const addToPlayList = (playList, title, video) => {
-  if (playList.length === 0) return [{ title: title, videoList: [video] }];
-  else {
-    if (playList.some((item) => item.title === title))
-      return playList.map((item) =>
+export const addToPlayList = (playList, title, video) =>
+  playList.some((item) => item.title === title)
+    ? playList.map((item) =>
         item.title === title
           ? {
               ...item,
@@ -27,10 +22,8 @@ export const addToPlayList = (playList, title, video) => {
                 : [...item.videoList, video],
             }
           : item
-      );
-    else return [...playList, { title: title, videoList: [video] }];
-  }
-};
+      )
+    : [...playList, { title: title, videoList: [video] }];
 
 export const removeFromPlayList = (playList, title, videoToRemove) => {
   return playList
@@ -38,12 +31,9 @@ export const removeFromPlayList = (playList, title, videoToRemove) => {
       playList.title === title
         ? {
             ...playList,
-            videoList:
-              // playList.videoList.length > 0?
-              playList.videoList.filter(
-                (video) => video._id !== videoToRemove._id
-              ),
-            // : [],
+            videoList: playList.videoList.filter(
+              (video) => video._id !== videoToRemove._id
+            ),
           }
         : playList
     )

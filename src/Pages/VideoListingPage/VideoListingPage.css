@@ -3,13 +3,12 @@
   margin-left: 7rem;
   width: auto;
   height: 100%;
-  background-color: var(--bg-color);
   padding: 2rem;
 }
 
 .search-input-container-two {
   display: none;
-  background-color: var(--white-color);
+  background-color: var(--bg-color);
   border-radius: 3px;
   width: fit-content;
   margin-bottom: 2rem;
@@ -21,14 +20,14 @@
   gap: 1rem;
 }
 .search-input {
-  padding: 0.3rem;
   text-align: left;
   font-size: 1rem;
   border-radius: 3px;
   padding: 3px;
   border: none;
   outline: none;
-  width: 20rem;
+  width: 25rem;
+  background-color: var(--bg-color);
 }
 .category-chips-container {
   gap: 1rem;

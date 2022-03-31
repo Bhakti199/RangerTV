@@ -12,7 +12,7 @@ export const SingeVideoPage = () => {
   const videoId = useParams();
   const { videos, state } = useMainContext();
   let video = videos.find((item) => item._id === videoId.videoId);
-
+ 
   return (
     <>
       <div className="single-video-page flex">

@@ -4,7 +4,6 @@
   margin-top: 5.7rem;
   min-height: 80vh;
   height: 100%;
-  background-color: var(--bg-color);
 }
 .playlist-option-container {
   gap: 1rem;

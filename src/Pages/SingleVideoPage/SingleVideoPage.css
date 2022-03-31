@@ -4,7 +4,6 @@
   margin-top: 5.7rem;
   height: 100vh;
   justify-content: center;
-  background-color: var(--bg-color);
 }
 .video-iframe {
   flex-direction: column;

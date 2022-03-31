@@ -11,6 +11,60 @@ export const VideoCard = ({ item }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [newPlaylist, setNewPlaylist] = useState(false);
   const [playlistInput, setPlaylistInput] = useState("");
+
+  const videoCardDispatchHandler = (type, value) => {
+    switch (type) {
+      case "REMOVE_FROM_WATCH_LATER":
+        dispatch({
+          type: "REMOVE_FROM_WATCH_LATER",
+          payload: value,
+        });
+        break;
+
+      case "ADD_TO_WATCH_LATER":
+        dispatch({
+          type: "ADD_TO_WATCH_LATER",
+          payload: value,
+        });
+        break;
+
+      case "REMOVE_FROM_LIKED_VIDEOS":
+        dispatch({
+          type: "REMOVE_FROM_LIKED_VIDEOS",
+          payload: value,
+        });
+        break;
+
+      case "ADD_TO_LIKED_VIDEOS":
+        dispatch({
+          type: "ADD_TO_LIKED_VIDEOS",
+          payload: value,
+        });
+        break;
+      case "ADD_TO_PLAYLIST":
+        dispatch({
+          type: "ADD_TO_PLAYLIST",
+          payload: value,
+        });
+        break;
+
+      case "REMOVE_FROM_PLAYLIST":
+        dispatch({
+          type: "REMOVE_FROM_PLAYLIST",
+          payload: value,
+        });
+        break;
+      case "ADD_TO_PLAYLIST":
+        dispatch({
+          type: "ADD_TO_PLAYLIST",
+          payload: value,
+        });
+        break;
+      default:
+        break;
+    }
+    setIsDrawerOpen(!isDrawerOpen);
+  };
   return (
     <>
       <div className="flex-row" key={item.id}>
@@ -38,26 +92,21 @@ export const VideoCard = ({ item }) => {
                     ) ? (
                       <span
                         className="card-drawer-item-display"
-                        onClick={() => {
-                          dispatch({
-                            type: "REMOVE_FROM_WATCH_LATER",
-                            payload: item,
-                          }),
-                            setIsDrawerOpen(!isDrawerOpen);
-                        }}
+                        onClick={() =>
+                          videoCardDispatchHandler(
+                            "REMOVE_FROM_WATCH_LATER",
+                            item
+                          )
+                        }
                       >
                         <AiFillCheckCircle />
                         Remove from watch later
                       </span>
                     ) : (
                       <span
-                        onClick={() => {
-                          dispatch({
-                            type: "ADD_TO_WATCH_LATER",
-                            payload: item,
-                          }),
-                            setIsDrawerOpen(!isDrawerOpen);
-                        }}
+                        onClick={() =>
+                          videoCardDispatchHandler("ADD_TO_WATCH_LATER", item)
+                        }
                       >
                         <MdAddCircle />
                         Watch later
@@ -69,26 +118,21 @@ export const VideoCard = ({ item }) => {
                       (video) => video._id === item._id
                     ) ? (
                       <span
-                        onClick={() => {
-                          dispatch({
-                            type: "REMOVE_FROM_LIKED_VIDEOS",
-                            payload: item,
-                          }),
-                            setIsDrawerOpen(!isDrawerOpen);
-                        }}
+                        onClick={() =>
+                          videoCardDispatchHandler(
+                            "REMOVE_FROM_LIKED_VIDEOS",
+                            item
+                          )
+                        }
                       >
                         <AiFillCheckCircle />
                         Dislike video
                       </span>
                     ) : (
                       <span
-                        onClick={() => {
-                          dispatch({
-                            type: "ADD_TO_LIKED_VIDEOS",
-                            payload: item,
-                          }),
-                            setIsDrawerOpen(!isDrawerOpen);
-                        }}
+                        onClick={() =>
+                          videoCardDispatchHandler("ADD_TO_LIKED_VIDEOS", item)
+                        }
                       >
                         <MdAddCircle />
                         Like videos
@@ -109,13 +153,12 @@ export const VideoCard = ({ item }) => {
                     <MdAddCircle />
                     {newPlaylist ? (
                       <span
-                        onClick={() => {
-                          dispatch({
-                            type: "ADD_TO_PLAYLIST",
-                            payload: { title: playlistInput, video: item },
-                          });
-                          setIsDrawerOpen(!isDrawerOpen);
-                        }}
+                        onClick={() =>
+                          videoCardDispatchHandler("ADD_TO_PLAYLIST", {
+                            title: playlistInput,
+                            video: item,
+                          })
+                        }
                       >
                         Add new playList
                       </span>
@@ -132,11 +175,10 @@ export const VideoCard = ({ item }) => {
                           key={index}
                           className="card-drawer-item margin-top-bottom-zero flex"
                           onClick={() => {
-                            dispatch({
-                              type: "REMOVE_FROM_PLAYLIST",
-                              payload: { title: element.title, video: item },
+                            videoCardDispatchHandler("REMOVE_FROM_PLAYLIST", {
+                              title: element.title,
+                              video: item,
                             });
-                            setIsDrawerOpen(!isDrawerOpen);
                           }}
                         >
                           <AiFillCheckCircle />
@@ -147,11 +189,10 @@ export const VideoCard = ({ item }) => {
                           key={index}
                           className="card-drawer-item margin-top-bottom-zero flex"
                           onClick={() => {
-                            dispatch({
-                              type: "ADD_TO_PLAYLIST",
-                              payload: { title: element.title, video: item },
+                            videoCardDispatchHandler("ADD_TO_PLAYLIST", {
+                              title: element.title,
+                              video: item,
                             });
-                            setIsDrawerOpen(!isDrawerOpen);
                           }}
                         >
                           <AiFillFolderAdd />
