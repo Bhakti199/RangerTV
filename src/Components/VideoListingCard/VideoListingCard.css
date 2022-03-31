@@ -1,34 +1,33 @@
 .card-display-grid {
   padding: 3rem;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
 }
 .video-img {
-  height: 12rem;
-  width: 21rem;
+  height: 10rem;
+  width: 18rem;
   align-self: center;
   border-radius: 3px;
 }
 .video-card {
   position: relative;
   flex-direction: column;
-  height: 21rem;
-  width: 21rem;
+  height: 17rem;
+  width: 18rem;
   background-color: var(--white-color);
   transition: 0.2s;
   border-radius: 3px;
 }
 .video-card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
 }
 .video-card-text-container {
   padding: 10px;
 }
 
 .video-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 19rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,18 +52,27 @@
   z-index: 1;
   box-shadow: 2px 4px 7px 2px rgb(0 0 0 / 10%);
   position: absolute;
-  top: 14rem;
+  top: 11rem;
   right: 1.7rem;
   flex-direction: column;
   justify-content: center;
   background-color: var(--bg-color);
 }
 .card-drawer-item {
-  align-items: center;
   gap: 5px;
   padding: 10px;
   font-weight: 100;
 }
+.card-drawer-item-display {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 100;
+}
+.playlist-input {
+  margin: 0 1rem;
+}
+
 @media screen and (max-width: 900px) {
   .video-card {
     width: 17rem;

@@ -25,11 +25,6 @@ export const Navbar = () => {
             />
           )}
 
-          <img
-            src="https://ik.imagekit.io/yol3sixl2xj/RangerTV_OJtBllc2D.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648374923579"
-            alt=""
-            className="nav-logo"
-          />
           <h1 className="nav-name-text">RangerTV</h1>
         </div>
 
@@ -47,7 +42,12 @@ export const Navbar = () => {
           <FaUserAlt className="profile-icon " />
           <p className="margin-top-bottom-zero">Login</p>
         </div>
-        {isOpen && <HamburgurMenuList className="hamburgur-display" />}
+        {isOpen && (
+          <HamburgurMenuList
+            className="hamburgur-display"
+            setIsOpen={setIsOpen}
+          />
+        )}
       </div>
     </>
   );

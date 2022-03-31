@@ -15,26 +15,30 @@ export const Sidebar = () => {
             <span className="sidebar-item-text"> Home</span>
           </li>
         </Link>
-
-        <li className="sidebar-item flex-col">
-          <RiPlayList2Fill className="sidebar-icon" />
-          <span className="sidebar-item-text">PlayList</span>
-        </li>
+        <Link to="/playlists" className="link link-color">
+          <li className="sidebar-item flex-col">
+            <RiPlayList2Fill className="sidebar-icon" />
+            <span className="sidebar-item-text">PlayList</span>
+          </li>
+        </Link>
         <Link to="/video-listing-page" className="link link-color">
           <li className="sidebar-item flex-col">
             <BsMusicNoteBeamed className="sidebar-icon" />
             <span className="sidebar-item-text">Explore</span>
           </li>
         </Link>
-
-        <li className="sidebar-item flex-col">
-          <BsFillBookmarkFill className="sidebar-icon" />
-          <span className="sidebar-item-text">Watch Later</span>
-        </li>
-        <li className="sidebar-item flex-col">
-          <AiFillLike className="sidebar-icon" />
-          <span className="sidebar-item-text">Liked videos</span>
-        </li>
+        <Link to="/watch-later" className="link link-color">
+          <li className="sidebar-item flex-col">
+            <BsFillBookmarkFill className="sidebar-icon" />
+            <span className="sidebar-item-text">Watch Later</span>
+          </li>
+        </Link>
+        <Link to="/liked-videos" className="link link-color">
+          <li className="sidebar-item flex-col">
+            <AiFillLike className="sidebar-icon" />
+            <span className="sidebar-item-text">Liked videos</span>
+          </li>
+        </Link>
       </ul>
     </aside>
   );
