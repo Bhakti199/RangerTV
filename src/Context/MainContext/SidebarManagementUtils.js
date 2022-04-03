@@ -41,17 +41,6 @@ export const removeFromPlayList = (playList, title, videoToRemove) => {
 };
 
 export const FilterVideoListByCategory = (currentCategory, videoList) => {
-  console.log(currentCategory);
-  switch (currentCategory) {
-    case "Comedy":
-      return videoList.filter((video) => video.categoryName === "Comedy");
-    case "Action":
-      return videoList.filter((video) => video.categoryName === "Action");
-    case "Horror":
-      return videoList.filter((video) => video.categoryName === "Horror");
-    case "Thriller":
-      return videoList.filter((video) => video.categoryName === "Thriller");
-    case "All":
-      return videoList;
-  }
+  if (currentCategory === "All") return videoList;
+  return videoList.filter((video) => video.categoryName === currentCategory);
 };

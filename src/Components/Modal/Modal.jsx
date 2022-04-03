@@ -39,8 +39,10 @@ export const Modal = ({ setOpenModal, item }) => {
           </span>
         </div>
         <div className="playlist-container">
-          {state.playList.map((element, index) =>
-            element.videoList.some((video) => video._id === item._id) ? (
+          {state.playList.map((individualPlaylist, index) =>
+            individualPlaylist.videoList.some(
+              (video) => video._id === item._id
+            ) ? (
               <div
                 key={index}
                 className="card-drawer-item margin-top-bottom-zero flex"
@@ -48,7 +50,7 @@ export const Modal = ({ setOpenModal, item }) => {
                   dispatch({
                     type: "REMOVE_FROM_PLAYLIST",
                     payload: {
-                      title: element.title,
+                      title: individualPlaylist.title,
                       video: item,
                     },
                   });
@@ -56,7 +58,7 @@ export const Modal = ({ setOpenModal, item }) => {
                 }}
               >
                 <AiFillCheckCircle />
-                Remove from {element.title}
+                Remove from {individualPlaylist.title}
               </div>
             ) : (
               <div
@@ -66,7 +68,7 @@ export const Modal = ({ setOpenModal, item }) => {
                   dispatch({
                     type: "ADD_TO_PLAYLIST",
                     payload: {
-                      title: element.title,
+                      title: individualPlaylist.title,
                       video: item,
                     },
                   });
@@ -74,7 +76,7 @@ export const Modal = ({ setOpenModal, item }) => {
                 }}
               >
                 <AiFillFolderAdd />
-                Add to {element.title}
+                Add to {individualPlaylist.title}
               </div>
             )
           )}

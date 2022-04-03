@@ -46,25 +46,6 @@ export const VideoCard = ({ item }) => {
           payload: value,
         });
         break;
-
-      case "REMOVE_FROM_PLAYLIST":
-        dispatch({
-          type: "REMOVE_FROM_PLAYLIST",
-          payload: value,
-        });
-        break;
-      case "ADD_TO_PLAYLIST":
-        dispatch({
-          type: "ADD_TO_PLAYLIST",
-          payload: value,
-        });
-        break;
-      case "ADD_TO_HISTORY":
-        dispatch({
-          type: "ADD_TO_HISTORY",
-          payload: value,
-        });
-        break;
       default:
         break;
     }

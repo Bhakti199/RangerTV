@@ -45,10 +45,7 @@
   background-color: var(--purple-medium);
   color: var(--white-color);
 }
-/* .category-chips:hover {
-  background-color: var(--purple-medium);
-  color: var(--white-color);
-} */
+
 @media screen and (max-width: 900px) {
   .video-listing-page {
     margin-left: 0;
