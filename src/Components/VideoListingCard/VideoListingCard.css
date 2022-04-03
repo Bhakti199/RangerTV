@@ -16,6 +16,7 @@
   height: 17rem;
   width: 18rem;
   background-color: var(--white-color);
+  border: 1px solid #d1d5db;
   transition: 0.2s;
   border-radius: 3px;
 }
@@ -25,9 +26,11 @@
 .video-card-text-container {
   padding: 10px;
 }
-
+.video-card-video-owner {
+  font-weight: 100;
+}
 .video-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 19rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -76,7 +79,7 @@
 @media screen and (max-width: 900px) {
   .video-card {
     width: 17rem;
-    height: 19rem;
+    height: 17rem;
   }
   .video-img {
     width: 17rem;
@@ -91,10 +94,10 @@
     padding: 10px 1.5rem;
   }
   .video-card {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .card-display-grid {
     padding: 1rem;
-    gap: 2rem;
+    gap: 1rem;
   }
 }

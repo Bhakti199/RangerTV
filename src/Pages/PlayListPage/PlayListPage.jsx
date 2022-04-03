@@ -9,7 +9,7 @@ export const PlayListPage = () => {
     <div className="playlist-page">
       <Sidebar />
       <div>
-        <h2>Watch Later</h2>
+        <h2 className="black">Watch Later</h2>
         <div className="flex playlist-row">
           {state.watchLater && state.watchLater.length === 0 ? (
             <p className="margin-top-bottom-zero">0 videos</p>
@@ -22,7 +22,7 @@ export const PlayListPage = () => {
         </div>
       </div>
       <div>
-        <h2>Liked Videos</h2>
+        <h2 className="black">Liked Videos</h2>
         <div className="flex playlist-row">
           {state.likedVideos && state.likedVideos.length === 0 ? (
             <p className="margin-top-bottom-zero">0 videos</p>
@@ -39,7 +39,7 @@ export const PlayListPage = () => {
         {state.playList &&
           state.playList.map((playList) => (
             <div>
-              <h2>{playList.title}</h2>
+              <h2 className="black">{playList.title}</h2>
               <div className="flex playlist-row">
                 <NewPlayListDisplay
                   videoList={playList.videoList}

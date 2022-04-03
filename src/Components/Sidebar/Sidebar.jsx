@@ -1,10 +1,13 @@
 import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import { RiPlayList2Fill } from "react-icons/ri";
 import { HiHome } from "react-icons/hi";
-import { BsFillBookmarkFill, BsMusicNoteBeamed } from "react-icons/bs";
-import { AiFillLike } from "react-icons/ai";
+import {
+  BsFillBookmarkFill,
+  BsPlayBtnFill,
+  BsCollectionPlayFill,
+} from "react-icons/bs";
+import { AiFillLike, AiOutlineHistory } from "react-icons/ai";
 export const Sidebar = () => {
   return (
     <aside className="sidebar-container">
@@ -15,16 +18,17 @@ export const Sidebar = () => {
             <span className="sidebar-item-text"> Home</span>
           </li>
         </Link>
-        <Link to="/playlists" className="link link-color">
-          <li className="sidebar-item flex-col">
-            <RiPlayList2Fill className="sidebar-icon" />
-            <span className="sidebar-item-text">PlayList</span>
-          </li>
-        </Link>
+
         <Link to="/video-listing-page" className="link link-color">
           <li className="sidebar-item flex-col">
-            <BsMusicNoteBeamed className="sidebar-icon" />
+            <BsPlayBtnFill className="sidebar-icon" />
             <span className="sidebar-item-text">Explore</span>
+          </li>
+        </Link>
+        <Link to="/playlists" className="link link-color">
+          <li className="sidebar-item flex-col">
+            <BsCollectionPlayFill className="sidebar-icon" />
+            <span className="sidebar-item-text">PlayList</span>
           </li>
         </Link>
         <Link to="/watch-later" className="link link-color">
@@ -37,6 +41,12 @@ export const Sidebar = () => {
           <li className="sidebar-item flex-col">
             <AiFillLike className="sidebar-icon" />
             <span className="sidebar-item-text">Liked videos</span>
+          </li>
+        </Link>
+        <Link to="/history-videos" className="link link-color">
+          <li className="sidebar-item flex-col">
+            <AiOutlineHistory className="sidebar-icon" />
+            <span className="sidebar-item-text">History</span>
           </li>
         </Link>
       </ul>

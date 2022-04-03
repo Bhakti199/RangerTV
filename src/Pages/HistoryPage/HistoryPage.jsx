@@ -4,7 +4,7 @@ import { Sidebar, WatchLaterCard } from "../../Components/Index";
 import "../WatchLaterPage/WatchLaterPage.css";
 import "../../Components/VideoListingCard/VideoListingCard.css";
 import { useMainContext } from "../../Context/Index";
-export const LikedVideosPage = () => {
+export const HistoryPage = () => {
   const { state } = useMainContext();
 
   return (
@@ -12,12 +12,9 @@ export const LikedVideosPage = () => {
       <Sidebar />
 
       <div className="watch-later-page">
-        <h2 className="black">Liked Videos</h2>
+        <h2>History</h2>
         <div className="watch-later-container">
-          <WatchLaterCard
-            videoList={state.likedVideos}
-            title={"LIKED_VIDEOS"}
-          />
+          <WatchLaterCard videoList={state.historyList} title={"HISTORY"} />
         </div>
       </div>
     </div>

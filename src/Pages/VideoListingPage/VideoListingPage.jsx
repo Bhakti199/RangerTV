@@ -1,9 +1,10 @@
 import React from "react";
-import { Sidebar, VideoListingCard } from "../../Components/Index";
+import { Modal, Sidebar, VideoListingCard } from "../../Components/Index";
 import { BsSearch } from "react-icons/bs";
-
 import "./VideoListingPage.css";
+import { useMainContext } from "../../Context/Index";
 export const VideoListingPage = () => {
+  const { setSearchInput, state, dispatch } = useMainContext();
   return (
     <>
       <Sidebar className="sidebar-display" />
@@ -16,16 +17,42 @@ export const VideoListingPage = () => {
                 className="search-input"
                 type="text"
                 placeholder="Explore..."
+                onChange={(event) => setSearchInput(event.target.value)}
               />
             </div>
           </div>
         </div>
         <div className="flex category-chips-container">
-          <div className="category-chips">All</div>
-          <div className="category-chips">Comedy</div>
-          <div className="category-chips">Action</div>
-          <div className="category-chips">Horror</div>
-          <div className="category-chips">Thriller</div>
+          <div
+            className={`category-chips pointer ${
+              state.currentCategory === "All" && "chip-default"
+            }`}
+            onClick={() =>
+              dispatch({
+                type: "SET_CURRENT_CATEGORY",
+                payload: "All",
+              })
+            }
+          >
+            All
+          </div>
+          {state.categoryList.map((item) => (
+            <div
+              className={`category-chips pointer ${
+                state.currentCategory === item.categoryName && "chip-default"
+              }`}
+              key={item._id}
+              onClick={() => {
+                dispatch({
+                  type: "SET_CURRENT_CATEGORY",
+                  payload: item.categoryName,
+                });
+                console.log(item.categoryName);
+              }}
+            >
+              {item.categoryName}
+            </div>
+          ))}
         </div>
 
         <VideoListingCard />

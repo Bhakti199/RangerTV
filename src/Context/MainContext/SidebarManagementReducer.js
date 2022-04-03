@@ -3,9 +3,30 @@ import {
   removeFromVideoList,
   addToPlayList,
   removeFromPlayList,
+  FilterVideoListByCategory,
 } from "./SidebarManagementUtils";
 export const sidebarManagement = (state, action) => {
   switch (action.type) {
+    case "ASSIGN_VIDEOS":
+      return {
+        ...state,
+        videoList: action.payload,
+        videoListByCategory: action.payload,
+      };
+    case "ASSIGN_CATEGORY":
+      return {
+        ...state,
+        categoryList: action.payload,
+      };
+    case "SET_CURRENT_CATEGORY":
+      return {
+        ...state,
+        currentCategory: action.payload,
+        videoListByCategory: FilterVideoListByCategory(
+          action.payload,
+          state.videoList
+        ),
+      };
     case "ADD_TO_LIKED_VIDEOS":
       return {
         ...state,
@@ -43,6 +64,16 @@ export const sidebarManagement = (state, action) => {
           action.payload.title,
           action.payload.video
         ),
+      };
+    case "ADD_TO_HISTORY":
+      return {
+        ...state,
+        historyList: addToVideoList(state.historyList, action.payload),
+      };
+    case "REMOVE_FROM_HISTORY":
+      return {
+        ...state,
+        historyList: removeFromVideoList(state.historyList, action.payload),
       };
   }
 };
