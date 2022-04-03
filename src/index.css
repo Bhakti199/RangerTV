@@ -16,7 +16,7 @@ body {
   --grey-light: #d6d3d1;
   --stone-black: #57534e;
   --grey-lighter: #cbd5e1;
-  --black-color: black;
+  --black-color: #27272a;
   --grey-medium: #4b5563;
   --red-color: #dc2626;
   /* --check-color: #e879f9; */
@@ -77,6 +77,12 @@ button:hover {
 }
 .text-center {
   text-align: center;
+}
+.pointer {
+  cursor: pointer;
+}
+.black {
+  color: var(--black-color);
 }
 @media screen and (max-width: 600px) {
   html {

@@ -21,7 +21,7 @@
   font-size: 1.5rem;
 }
 .sidebar-item-text {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .sidebar-item:hover {
   color: var(--purple-medium);

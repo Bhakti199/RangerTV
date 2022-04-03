@@ -39,3 +39,8 @@ export const removeFromPlayList = (playList, title, videoToRemove) => {
     )
     .filter((playList) => playList.videoList.length !== 0);
 };
+
+export const FilterVideoListByCategory = (currentCategory, videoList) => {
+  if (currentCategory === "All") return videoList;
+  return videoList.filter((video) => video.categoryName === currentCategory);
+};

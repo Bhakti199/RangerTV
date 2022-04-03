@@ -8,6 +8,7 @@ import {
   SingeVideoPage,
   VideoListingPage,
   WatchLaterPage,
+  HistoryPage,
 } from "./Pages/Index";
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/watch-later" element={<WatchLaterPage />} />
         <Route path="/liked-videos" element={<LikedVideosPage />} />
         <Route path="/playlists" element={<PlayListPage />}></Route>
+        <Route path="/history-videos" element={<HistoryPage />}></Route>
       </Routes>
     </div>
   );

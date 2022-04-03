@@ -1,59 +1,120 @@
 import React from "react";
+import { useState } from "react";
 import "./SingleVideoPage.css";
-import { RiPlayList2Fill } from "react-icons/ri";
 import { FaShare } from "react-icons/fa";
-import { IoMdBookmark } from "react-icons/io";
-import { AiFillLike } from "react-icons/ai";
-import { BsDot } from "react-icons/bs";
+import { AiFillLike, AiOutlineLike } from "react-icons/ai";
+import {
+  BsDot,
+  BsFillBookmarkDashFill,
+  BsFillBookmarkFill,
+  BsCollectionPlayFill,
+} from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { useMainContext } from "../../Context/Index";
-import { Sidebar } from "../../Components/Index";
+import { Sidebar, VideoCard, Modal } from "../../Components/Index";
 export const SingeVideoPage = () => {
+  const [singlePageModal, setSinglePageModal] = useState(false);
   const videoId = useParams();
-  const { videos, state } = useMainContext();
-  let video = videos.find((item) => item._id === videoId.videoId);
- 
+  const { state, searchInput, dispatch } = useMainContext();
+  let video = state.videoList.find((item) => item._id === videoId.videoId);
+
   return (
     <>
       <div className="single-video-page flex">
         <div className="video-iframe flex">
           <iframe
-            src={`https://www.youtube.com/embed/${videoId.videoId}`}
+            src={`https://www.youtube.com/embed/${videoId.videoId}?autoplay=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className="singlepage-video-section-two">
-            <p className="singlepage-video-title">{video?.title}</p>
-            <p className="margin-top-bottom-zero singlepage-video-owner">
-              {video?.owner}
-            </p>
-            <p className=" flex margin-top-bottom-zero singlepage-video-card-genre">
-              {video?.categoryName} <BsDot /> {video?.views} <BsDot />
-              {video?.date}
-            </p>
+          <p className="singlepage-video-title">{video?.title}</p>
+          <div className="singlepage-video-section-two flex">
+            <div>
+              <p className="margin-top-bottom-zero singlepage-video-owner">
+                {video?.owner}
+              </p>
+              <p className=" flex margin-top-bottom-zero singlepage-video-card-genre">
+                {video?.categoryName} <BsDot /> {video?.views} <BsDot />
+                {video?.date}
+              </p>
+            </div>
+
             <div className="video-iframe-icons-container flex">
               <span className="video-iframe-icons flex">
-                <AiFillLike />
-                <span className="singlepage-video-icon-text">Like</span>
+                {state.likedVideos.some(
+                  (element) => element._id === video?._id
+                ) ? (
+                  <AiFillLike
+                    onClick={() =>
+                      dispatch({
+                        type: "REMOVE_FROM_LIKED_VIDEOS",
+                        payload: video,
+                      })
+                    }
+                  />
+                ) : (
+                  <AiOutlineLike
+                    onClick={() =>
+                      dispatch({ type: "ADD_TO_LIKED_VIDEOS", payload: video })
+                    }
+                  />
+                )}
               </span>
               <span className="video-iframe-icons flex">
-                <IoMdBookmark />
-                <span className="singlepage-video-icon-text">Watch Later</span>
+                {state.watchLater.some(
+                  (element) => element._id === video?._id
+                ) ? (
+                  <BsFillBookmarkDashFill
+                    onClick={() =>
+                      dispatch({
+                        type: "REMOVE_FROM_WATCH_LATER",
+                        payload: video,
+                      })
+                    }
+                  />
+                ) : (
+                  <BsFillBookmarkFill
+                    onClick={() =>
+                      dispatch({ type: "ADD_TO_WATCH_LATER", payload: video })
+                    }
+                  />
+                )}
               </span>
               <span className="video-iframe-icons flex">
-                <RiPlayList2Fill />
-                <span className="singlepage-video-icon-text">PlayList</span>
+                <BsCollectionPlayFill
+                  onClick={() => setSinglePageModal(true)}
+                />
               </span>
               <span className="video-iframe-icons flex">
                 <FaShare />
-                <span className="singlepage-video-icon-text">Share</span>
               </span>
+
+              {singlePageModal && (
+                <Modal
+                  setOpenModal={setSinglePageModal}
+                  item={state.videoList.find(
+                    (item) => item._id === videoId.videoId
+                  )}
+                />
+              )}
             </div>
           </div>
         </div>
+        <div className="single-video-page-videoList flex">
+          {searchInput === ""
+            ? state.videoList.map((item) => (
+                <VideoCard item={item} key={item.id} />
+              ))
+            : state.videoList
+                .filter((item) =>
+                  item.title.toLowerCase().includes(searchInput.toLowerCase())
+                )
+                .map((item) => <VideoCard item={item} key={item.id} />)}
+        </div>
       </div>
+
       <Sidebar />
     </>
   );

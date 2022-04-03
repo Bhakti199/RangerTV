@@ -5,9 +5,10 @@ import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { HamburgurMenuList } from "../Index";
-
+import { useMainContext } from "../../Context/Index";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { setSearchInput } = useMainContext();
   return (
     <>
       <div className="nav">
@@ -35,6 +36,7 @@ export const Navbar = () => {
               className="search-input"
               type="text"
               placeholder="Explore..."
+              onChange={(event) => setSearchInput(event.target.value)}
             />
           </div>
         </div>

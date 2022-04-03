@@ -5,14 +5,14 @@ import "./HomePage.css";
 import { useMainContext } from "../../Context/Index";
 
 export const HomePage = () => {
-  const { category } = useMainContext();
+  const { state, dispatch } = useMainContext();
   return (
     <>
       <div>
         <div className="landing-page flex-row">
           <div className="banner-img-holder">
             <img
-              src="https://ik.imagekit.io/yol3sixl2xj/banner_7g4V5pZ84.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1648375299352"
+              src="https://ik.imagekit.io/yol3sixl2xj/imp_FZJRdmajd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648883114627"
               alt=""
               className="responsive-img"
             ></img>
@@ -25,7 +25,7 @@ export const HomePage = () => {
             <span className="nav-name-text"> RangerTV</span>.
           </p>
           <div className="flex-row banners-display">
-            {category.map((item) => (
+            {state.categoryList.map((item) => (
               <div className="flex-col individual-banner" key={item._id}>
                 <div className="category-banner flex-row">
                   <Link to="/video-listing-page">
@@ -37,7 +37,15 @@ export const HomePage = () => {
                   </Link>
                 </div>
                 <Link to="/video-listing-page">
-                  <button className=" text-align-center category-heading">
+                  <button
+                    className=" text-align-center category-heading"
+                    onClick={() =>
+                      dispatch({
+                        type: "SET_CURRENT_CATEGORY",
+                        payload: item.categoryName,
+                      })
+                    }
+                  >
                     {item.categoryName}
                   </button>
                 </Link>

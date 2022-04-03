@@ -28,3 +28,8 @@
   gap: 1rem;
   padding: 10px 0;
 }
+@media screen and (max-width: 900px) {
+  .playlist-page {
+    margin-left: 0;
+  }
+}

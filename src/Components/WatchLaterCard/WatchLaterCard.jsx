@@ -1,6 +1,5 @@
 import React from "react";
-import { BsDot } from "react-icons/bs";
-import { TiFolderDelete } from "react-icons/ti";
+import { BsDot, BsX } from "react-icons/bs";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
 import { useMainContext } from "../../Context/Index";
@@ -31,7 +30,7 @@ export const WatchLaterCard = ({ videoList, title }) => {
               </p>
             </div>
             <button className="watch-later-cancel-button">
-              <TiFolderDelete
+              <BsX
                 onClick={() =>
                   dispatch({ type: `REMOVE_FROM_${title}`, payload: video })
                 }
