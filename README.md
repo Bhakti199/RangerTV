@@ -12,7 +12,7 @@ live link : https://ranger-tv.netlify.app/
 - ### Explore Page
 
   - A video listing page where all the videoss are listed with a section to select categories.
-  - Explore page includes multiple filters like -
+  - Explore page includes filters like -
     - Search Videos: Filter Videos by searching for what you are looking for.
     - Filter By Genre: Filter Videos by Genre like Horror, Action, Thriller and Comedy etc.
 
