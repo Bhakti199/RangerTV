@@ -3,7 +3,7 @@ import { BsDot, BsX } from "react-icons/bs";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
 import { useMainContext } from "../../Context/Index";
-
+import toast from "react-hot-toast";
 export const WatchLaterCard = ({ videoList, title }) => {
   const { dispatch } = useMainContext();
   return (
@@ -31,9 +31,10 @@ export const WatchLaterCard = ({ videoList, title }) => {
             </div>
             <button className="watch-later-cancel-button">
               <BsX
-                onClick={() =>
-                  dispatch({ type: `REMOVE_FROM_${title}`, payload: video })
-                }
+                onClick={() => {
+                  dispatch({ type: `REMOVE_FROM_${title}`, payload: video }),
+                    toast(`Removed from ${title}.`, { icon: "❌" });
+                }}
               />
             </button>
           </div>

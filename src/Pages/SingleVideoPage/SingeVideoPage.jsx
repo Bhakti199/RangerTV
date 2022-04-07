@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./SingleVideoPage.css";
 import { FaShare } from "react-icons/fa";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
+import toast from "react-hot-toast";
 import {
   BsDot,
   BsFillBookmarkDashFill,
@@ -47,18 +48,20 @@ export const SingeVideoPage = () => {
                   (element) => element._id === video?._id
                 ) ? (
                   <AiFillLike
-                    onClick={() =>
+                    onClick={() => {
                       dispatch({
                         type: "REMOVE_FROM_LIKED_VIDEOS",
                         payload: video,
-                      })
-                    }
+                      }),
+                        toast("Removed from Liked videos.", { icon: "❌" });
+                    }}
                   />
                 ) : (
                   <AiOutlineLike
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_LIKED_VIDEOS", payload: video })
-                    }
+                    onClick={() => {
+                      dispatch({ type: "ADD_TO_LIKED_VIDEOS", payload: video }),
+                        toast("Added to Liked later.", { icon: "✔️" });
+                    }}
                   />
                 )}
               </span>
@@ -67,18 +70,20 @@ export const SingeVideoPage = () => {
                   (element) => element._id === video?._id
                 ) ? (
                   <BsFillBookmarkDashFill
-                    onClick={() =>
+                    onClick={() => {
                       dispatch({
                         type: "REMOVE_FROM_WATCH_LATER",
                         payload: video,
-                      })
-                    }
+                      }),
+                        toast("Removed from watch videos.", { icon: "❌" });
+                    }}
                   />
                 ) : (
                   <BsFillBookmarkFill
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_WATCH_LATER", payload: video })
-                    }
+                    onClick={() => {
+                      dispatch({ type: "ADD_TO_WATCH_LATER", payload: video }),
+                        toast("Added to watch later.", { icon: "✔️" });
+                    }}
                   />
                 )}
               </span>
