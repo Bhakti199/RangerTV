@@ -18,7 +18,7 @@ live link : https://ranger-tv.netlify.app/
 
 - ### Video Card
 
-  - Movie name, genre, release date, views, title and thumbnail.
+  - Show name, genre, release date, views, title and thumbnail.
   - Drawer to Add to Liked Video, Watch Later, Playlists options (through modal).
 
 - ### Single Video Page
