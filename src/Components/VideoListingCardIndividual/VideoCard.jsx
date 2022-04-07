@@ -3,6 +3,7 @@ import { BsDot, BsThreeDotsVertical } from "react-icons/bs";
 import { MdAddCircle } from "react-icons/md";
 import { AiFillCheckCircle, AiFillFolderAdd } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 import "../../Components/VideoListingCard/VideoListingCard.css";
 import { useState } from "react";
 import { useMainContext } from "../../Context/Index";
@@ -80,21 +81,23 @@ export const VideoCard = ({ item }) => {
                     ) ? (
                       <span
                         className="card-drawer-item-display"
-                        onClick={() =>
+                        onClick={() => {
                           videoCardDispatchHandler(
                             "REMOVE_FROM_WATCH_LATER",
                             item
-                          )
-                        }
+                          ),
+                            toast("Removed from watch later.", { icon: "❌" });
+                        }}
                       >
                         <AiFillCheckCircle />
                         Remove from watch later
                       </span>
                     ) : (
                       <span
-                        onClick={() =>
-                          videoCardDispatchHandler("ADD_TO_WATCH_LATER", item)
-                        }
+                        onClick={() => {
+                          videoCardDispatchHandler("ADD_TO_WATCH_LATER", item),
+                            toast("Added to watch later.", { icon: "✔️" });
+                        }}
                       >
                         <MdAddCircle />
                         Watch later
@@ -106,21 +109,23 @@ export const VideoCard = ({ item }) => {
                       (video) => video._id === item._id
                     ) ? (
                       <span
-                        onClick={() =>
+                        onClick={() => {
                           videoCardDispatchHandler(
                             "REMOVE_FROM_LIKED_VIDEOS",
                             item
-                          )
-                        }
+                          ),
+                            toast("Removed from liked videos.", { icon: "❌" });
+                        }}
                       >
                         <AiFillCheckCircle />
                         Dislike video
                       </span>
                     ) : (
                       <span
-                        onClick={() =>
-                          videoCardDispatchHandler("ADD_TO_LIKED_VIDEOS", item)
-                        }
+                        onClick={() => {
+                          videoCardDispatchHandler("ADD_TO_LIKED_VIDEOS", item),
+                            toast("Added to watch later", { icon: "✔️" });
+                        }}
                       >
                         <MdAddCircle />
                         Like videos

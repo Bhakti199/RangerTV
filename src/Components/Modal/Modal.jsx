@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MdAddCircle } from "react-icons/md";
 import { AiFillCheckCircle, AiFillFolderAdd } from "react-icons/ai";
 import { useMainContext } from "../../Context/Index";
+import { toast } from "react-hot-toast";
 import "./Modal.css";
 export const Modal = ({ setOpenModal, item }) => {
   console.log("from modal video", item);
@@ -33,6 +34,7 @@ export const Modal = ({ setOpenModal, item }) => {
                 },
               });
               setOpenModal(false);
+              toast(`Added ${playlistInput} playlist.`, { icon: "✔️" });
             }}
           >
             <MdAddCircle size="25" />
@@ -55,6 +57,9 @@ export const Modal = ({ setOpenModal, item }) => {
                     },
                   });
                   setOpenModal(false);
+                  toast(`Removed from ${individualPlaylist.title} playlist.`, {
+                    icon: "✔️",
+                  });
                 }}
               >
                 <AiFillCheckCircle />
@@ -73,6 +78,9 @@ export const Modal = ({ setOpenModal, item }) => {
                     },
                   });
                   setOpenModal(false);
+                  toast(`Added ${individualPlaylist.title} playlist.`, {
+                    icon: "✔️",
+                  });
                 }}
               >
                 <AiFillFolderAdd />

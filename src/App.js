@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import { Toaster } from "react-hot-toast";
+
 import { Navbar } from "./Components/Index";
 import {
   HomePage,
@@ -26,6 +28,13 @@ function App() {
         <Route path="/playlists" element={<PlayListPage />}></Route>
         <Route path="/history-videos" element={<HistoryPage />}></Route>
       </Routes>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          className: "toast",
+          duration: 2000,
+        }}
+      />
     </div>
   );
 }

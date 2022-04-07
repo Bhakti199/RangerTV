@@ -19,7 +19,7 @@ body {
   --black-color: #27272a;
   --grey-medium: #4b5563;
   --red-color: #dc2626;
-  /* --check-color: #e879f9; */
+  --off-purple: #fdf4ff;
 }
 .flex {
   display: flex;

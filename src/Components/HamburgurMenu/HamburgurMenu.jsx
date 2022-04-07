@@ -38,7 +38,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           Explore shows
         </Link>
         <Link
-          to="/"
+          to="/playlists"
           className="hamburgur-menu-item flex-row-only link link-color"
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
@@ -60,14 +60,6 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
         >
           <AiFillLike />
           Liked videos
-        </Link>
-        <Link
-          to="/"
-          className="hamburgur-menu-item flex-row-only link link-color"
-          onClick={() => setIsOpen((prevState) => !prevState)}
-        >
-          <IoIosInformationCircle />
-          About us
         </Link>
       </ul>
     </div>
