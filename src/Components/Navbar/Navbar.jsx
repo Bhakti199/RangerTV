@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
@@ -12,7 +13,6 @@ export const Navbar = () => {
   return (
     <>
       <div className="nav">
-        {}
         <div className="flex-row nav-name">
           {isOpen ? (
             <MdCancel
@@ -26,12 +26,12 @@ export const Navbar = () => {
             />
           )}
 
-          <h1 className="nav-name-text">RangerTV</h1>
+          <div className="navbar-title">RangerTV</div>
         </div>
 
         <div className="search-input-container ">
           <div className="search flex-row-only">
-            <BsSearch className="search-icon " />
+            <BsSearch size={27} color="var(--green-color)" />
             <input
               className="search-input"
               type="text"
@@ -40,10 +40,9 @@ export const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex-col login-nav">
-          <FaUserAlt className="profile-icon " />
-          <p className="margin-top-bottom-zero">Login</p>
-        </div>
+        <Link to="/login" className="flex-col login-nav">
+          <FaUserAlt size={27} color="var(--green-color)" />
+        </Link>
         {isOpen && (
           <HamburgurMenuList
             className="hamburgur-display"

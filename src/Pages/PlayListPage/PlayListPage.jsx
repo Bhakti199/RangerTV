@@ -7,12 +7,11 @@ export const PlayListPage = () => {
   const { state } = useMainContext();
   return (
     <div className="playlist-page">
-      <Sidebar />
       <div>
-        <h2 className="black">Watch Later</h2>
+        <h2 className="green">Watch Later</h2>
         <div className="flex playlist-row">
           {state.watchLater && state.watchLater.length === 0 ? (
-            <p className="margin-top-bottom-zero">0 videos</p>
+            <p className="margin-top-bottom-zero light-green">0 videos</p>
           ) : (
             <WatchLaterCard
               videoList={state.watchLater}
@@ -22,10 +21,10 @@ export const PlayListPage = () => {
         </div>
       </div>
       <div>
-        <h2 className="black">Liked Videos</h2>
+        <h2 className="green">Liked Videos</h2>
         <div className="flex playlist-row">
           {state.likedVideos && state.likedVideos.length === 0 ? (
-            <p className="margin-top-bottom-zero">0 videos</p>
+            <p className="margin-top-bottom-zero light-green">0 videos</p>
           ) : (
             <WatchLaterCard
               videoList={state.likedVideos}

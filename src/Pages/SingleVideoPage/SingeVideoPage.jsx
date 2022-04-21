@@ -30,12 +30,9 @@ export const SingeVideoPage = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <p className="singlepage-video-title">{video?.title}</p>
+          <div className="singlepage-video-title">{video?.title}</div>
           <div className="singlepage-video-section-two flex">
             <div>
-              <p className="margin-top-bottom-zero singlepage-video-owner">
-                {video?.owner}
-              </p>
               <p className=" flex margin-top-bottom-zero singlepage-video-card-genre">
                 {video?.categoryName} <BsDot /> {video?.views} <BsDot />
                 {video?.date}
@@ -48,6 +45,8 @@ export const SingeVideoPage = () => {
                   (element) => element._id === video?._id
                 ) ? (
                   <AiFillLike
+                    size={30}
+                    color="var(--green-color)"
                     onClick={() => {
                       dispatch({
                         type: "REMOVE_FROM_LIKED_VIDEOS",
@@ -58,6 +57,8 @@ export const SingeVideoPage = () => {
                   />
                 ) : (
                   <AiOutlineLike
+                    size={30}
+                    color="var(--green-color)"
                     onClick={() => {
                       dispatch({ type: "ADD_TO_LIKED_VIDEOS", payload: video }),
                         toast("Added to Liked later.", { icon: "✔️" });
@@ -70,6 +71,8 @@ export const SingeVideoPage = () => {
                   (element) => element._id === video?._id
                 ) ? (
                   <BsFillBookmarkDashFill
+                    size={23}
+                    color="var(--green-color)"
                     onClick={() => {
                       dispatch({
                         type: "REMOVE_FROM_WATCH_LATER",
@@ -80,6 +83,8 @@ export const SingeVideoPage = () => {
                   />
                 ) : (
                   <BsFillBookmarkFill
+                    size={23}
+                    color="var(--green-color)"
                     onClick={() => {
                       dispatch({ type: "ADD_TO_WATCH_LATER", payload: video }),
                         toast("Added to watch later.", { icon: "✔️" });
@@ -89,11 +94,13 @@ export const SingeVideoPage = () => {
               </span>
               <span className="video-iframe-icons flex">
                 <BsCollectionPlayFill
+                  size={23}
+                  color="var(--green-color)"
                   onClick={() => setSinglePageModal(true)}
                 />
               </span>
               <span className="video-iframe-icons flex">
-                <FaShare />
+                <FaShare size={25} color="var(--green-color)" />
               </span>
 
               {singlePageModal && (
@@ -119,8 +126,6 @@ export const SingeVideoPage = () => {
                 .map((item) => <VideoCard item={item} key={item.id} />)}
         </div>
       </div>
-
-      <Sidebar />
     </>
   );
 };

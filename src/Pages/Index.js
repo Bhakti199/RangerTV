@@ -6,3 +6,5 @@ export { LikedVideosPage } from "./LikedVideosPage/LikedVideosPage";
 export { PlayListPage } from "./PlayListPage/PlayListPage";
 export { NewPlayListDisplay } from "./PlayListPage/NewPlayListDisplay";
 export { HistoryPage } from "./HistoryPage/HistoryPage";
+export { LoginPage } from "./AuthPages/LoginPage";
+export { SignUpPage } from "./AuthPages/SignUpPage";

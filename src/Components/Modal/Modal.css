@@ -10,10 +10,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--bg-color);
+  background-color: var(--light-green);
   padding: 1rem;
   z-index: 6;
 }
 .playlist-input {
   padding: 5px;
+  background-color: var(--light-green);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--background-color);
+  color: var(--white-color);
+}
+.playlist-input::placeholder {
+  color: var(--background-color);
 }

@@ -9,10 +9,8 @@ export const HistoryPage = () => {
 
   return (
     <div>
-      <Sidebar />
-
       <div className="watch-later-page">
-        <h2>History</h2>
+        <h2 className="green">History</h2>
         <div className="watch-later-container">
           <WatchLaterCard videoList={state.historyList} title={"HISTORY"} />
         </div>

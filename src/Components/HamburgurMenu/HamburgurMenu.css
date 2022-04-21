@@ -6,10 +6,10 @@
   position: fixed;
   margin-top: 2.6rem;
   z-index: 3;
-  top: 3rem;
+  top: 2.5rem;
   left: 0;
   list-style: none;
-  background-color: var(--purple-lighter);
+  background-color: var(--light-green);
   width: 100%;
   display: none;
   flex-direction: column;
@@ -19,7 +19,7 @@
   color: black;
   margin-bottom: 2rem;
   font-size: 1.3rem;
-  font-weight: 100;
+  font-weight: 400;
   text-decoration: none;
   gap: 15px;
 }

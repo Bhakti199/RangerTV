@@ -1,24 +1,22 @@
 .nav {
-  box-shadow: 2px 4px 7px 2px rgb(0 0 0 / 10%);
-  display: flex;
-  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  display: flex;
+  align-items: center;
   z-index: 2;
-  background-color: var(--white-color);
+  height: 5rem;
+  background-color: var(--background-color);
+  color: var(--green-color);
+  border-bottom: 1px solid var(--green-color);
 }
-.nav-logo {
-  height: 3.5rem;
-  width: 3.5rem;
-  margin-left: 15px;
+.navbar-title {
+  margin-left: 1rem;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
-.nav-name {
-  width: fit-content;
-  gap: 15px;
-}
-
 .hamburgur-icon {
   font-size: 2rem;
   margin-left: 10px;
@@ -28,7 +26,7 @@
   display: none;
 }
 .search-input-container {
-  border: 1px solid black;
+  border: 2px solid var(--green-color);
   border-radius: 3px;
   padding-right: 7rem;
   align-items: start;
@@ -51,11 +49,8 @@
   outline: none;
   width: 14rem;
 }
-.profile-icon {
-  font-size: 1.5rem;
-}
 .login-nav {
-  margin-right: 1.2rem;
+  margin: 0 1.5rem;
 }
 .hamburgur-display {
   display: none;

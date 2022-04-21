@@ -7,12 +7,11 @@ export const VideoListingPage = () => {
   const { setSearchInput, state, dispatch } = useMainContext();
   return (
     <>
-      <Sidebar className="sidebar-display" />
       <div className="video-listing-page">
         <div className="flex-row">
           <div className="search-input-container-two ">
             <div className="search flex-row-only">
-              <BsSearch className="search-icon " />
+              <BsSearch size={22} color="var(--green-color)" />
               <input
                 className="search-input"
                 type="text"
