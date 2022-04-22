@@ -9,10 +9,8 @@ export const LoginPage = () => {
     useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const loginDetailsHandler = async (event) => {
-    event.preventDefault();
-    let [email, password] = event.target.elements;
-    const { data, status } = await getUserCall(email.value, password.value);
+
+  const statusCheck = (data, status) => {
     if (status === 200) {
       setIsUserLoggedIn(true);
       setUserInfo({ ...data.foundUser });
@@ -21,20 +19,21 @@ export const LoginPage = () => {
     }
   };
 
+  const loginDetailsHandler = async (event) => {
+    event.preventDefault();
+    let [email, password] = event.target.elements;
+    const { data, status } = await getUserCall(email.value, password.value);
+    statusCheck(data, status);
+  };
+
   const guestLoginDetailsHandler = async (email, password) => {
     const { data, status } = await getUserCall(email, password);
-    if (status === 200 || status === 201) {
-      setIsUserLoggedIn(true);
-      setUserInfo({ ...data.foundUser });
-      localStorage.setItem("userLoginToken", data.encodedToken);
-      navigate(location?.state?.from?.pathname || "/video-listing-page");
-    }
+    statusCheck(data, status);
   };
   return (
     <div className="auth-page">
       {isUserLoggedIn ? (
         <>
-          // This is rough css
           <div style={{ color: "white" }}>User Profile page will be here.</div>
           <button
             style={{ color: "white", border: "1px solid white" }}
