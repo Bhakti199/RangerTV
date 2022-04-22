@@ -55,19 +55,24 @@ export const VideoCard = ({ item }) => {
   return (
     <>
       <div className="flex-row" key={item.id}>
-        <div className="video-card flex">
+        <div className="video-card-listing-page  flex">
           <Link
+            className="video-img-listing-page"
             to={`/video-listing-page/${item._id}`}
             onClick={() => videoCardDispatchHandler("ADD_TO_HISTORY", item)}
           >
-            <img src={item.img} className="video-img responsive-img"></img>
+            <img
+              src={item.img}
+              className="video-card-img-radius responsive-img"
+            ></img>
           </Link>
           <div className="video-card-text-container">
             <div className="flex-row-only video-title-container">
               <span className="video-title link">{item.title}</span>
               <span>
                 <BsThreeDotsVertical
-                  className="video-card-icon"
+                  size={22}
+                  color="var(--white-color)"
                   onClick={() => {
                     setIsDrawerOpen(!isDrawerOpen);
                   }}

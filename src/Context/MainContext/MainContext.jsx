@@ -26,7 +26,7 @@ const MainContextProvider = ({ children }) => {
     historyList: [],
   };
   const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
-  console.log(state);
+
   useEffect(() => {
     (async () => {
       try {

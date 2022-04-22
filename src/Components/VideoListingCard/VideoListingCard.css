@@ -1,55 +1,67 @@
 .card-display-grid {
-  padding: 3rem;
+  padding: 1rem;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
 }
 .video-img {
   height: 10rem;
   width: 18rem;
   align-self: center;
-  border-radius: 3px;
+  object-fit: cover;
+  border: 1px solid var(--green-color);
+}
+.video-img-listing-page {
+  height: 70%;
+  width: 100%;
+  align-self: center;
+}
+.video-card-listing-page {
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black-color);
 }
 .video-card {
   position: relative;
   flex-direction: column;
   height: 17rem;
   width: 18rem;
-  background-color: var(--white-color);
-  border: 1px solid #d1d5db;
-  transition: 0.2s;
-  border-radius: 3px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  border: 1px solid var(--green-color);
 }
-.video-card:hover {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
+
 .video-card-text-container {
-  padding: 10px;
+  padding: 1rem 10px;
 }
 .video-card-video-owner {
-  font-weight: 100;
+  font-weight: 600;
+  color: var(--lightest-green);
 }
 .video-title {
   font-size: 1rem;
+  letter-spacing: 0.5px;
   max-width: 19rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  line-height: 1.5rem;
+  color: var(--white-color);
 }
 .video-title-container {
   justify-content: space-between;
   align-items: flex-start;
 }
-.video-card-icon {
-  font-size: 1.7rem;
-}
+
 .video-card-genre {
   padding-top: 5px;
   align-items: center;
-  color: var(--grey-medium);
-  font-weight: 100;
+  color: var(--white-color);
+  font-weight: 400;
 }
 .card-drawer-section {
   z-index: 1;
@@ -59,12 +71,12 @@
   right: 1.7rem;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bg-color);
+  background-color: var(--light-green);
 }
 .card-drawer-item {
   gap: 5px;
   padding: 10px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .card-drawer-item-display {
   display: flex;
