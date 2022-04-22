@@ -1,35 +1,31 @@
 import React from "react";
 import { Sidebar, WatchLaterCard } from "../../Components/Index";
-import { useMainContext } from "../../Context/Index";
+import { useMainContext, useAuth } from "../../Context/Index";
 import { NewPlayListDisplay } from "./NewPlayListDisplay";
 import "./PlayListPage.css";
 export const PlayListPage = () => {
   const { state } = useMainContext();
+  const { userInfo } = useAuth();
+  const { likes, watchlater } = userInfo;
   return (
     <div className="playlist-page">
       <div>
         <h2 className="green">Watch Later</h2>
         <div className="flex playlist-row">
-          {state.watchLater && state.watchLater.length === 0 ? (
+          {watchlater && watchlater.length === 0 ? (
             <p className="margin-top-bottom-zero light-green">0 videos</p>
           ) : (
-            <WatchLaterCard
-              videoList={state.watchLater}
-              title={"WATCH_LATER"}
-            />
+            <WatchLaterCard videoList={watchlater} title={"WATCH_LATER"} />
           )}
         </div>
       </div>
       <div>
         <h2 className="green">Liked Videos</h2>
         <div className="flex playlist-row">
-          {state.likedVideos && state.likedVideos.length === 0 ? (
+          {likes && likes.length === 0 ? (
             <p className="margin-top-bottom-zero light-green">0 videos</p>
           ) : (
-            <WatchLaterCard
-              videoList={state.likedVideos}
-              title={"LIKED_VIDEOS"}
-            />
+            <WatchLaterCard videoList={likes} title={"LIKED_VIDEOS"} />
           )}
         </div>
       </div>

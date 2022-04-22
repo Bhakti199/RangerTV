@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Sidebar, VideoListingCard } from "../../Components/Index";
+import { VideoListingCard } from "../../Components/Index";
 import { BsSearch } from "react-icons/bs";
 import "./VideoListingPage.css";
 import { useMainContext } from "../../Context/Index";
@@ -46,7 +46,6 @@ export const VideoListingPage = () => {
                   type: "SET_CURRENT_CATEGORY",
                   payload: item.categoryName,
                 });
-                console.log(item.categoryName);
               }}
             >
               {item.categoryName}
