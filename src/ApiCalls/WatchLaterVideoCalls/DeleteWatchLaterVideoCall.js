@@ -9,7 +9,6 @@ export const deleteWatchLaterVideoCall = async (videoId) => {
         },
       }
     );
-    console.log(data.watchlater, status);
     return { watchlater: data.watchlater, status };
   } catch (error) {
     console.error(error);

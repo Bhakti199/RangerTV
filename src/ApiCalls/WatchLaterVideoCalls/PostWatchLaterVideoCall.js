@@ -12,7 +12,6 @@ export const postWatchLaterVideoCall = async (video) => {
         },
       }
     );
-    console.log(data, status);
     return { watchlater: data.watchlater, status };
   } catch (error) {
     console.error(error);
