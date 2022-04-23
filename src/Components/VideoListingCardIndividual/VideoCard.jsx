@@ -1,15 +1,24 @@
-import React from "react";
-import { BsDot, BsThreeDotsVertical } from "react-icons/bs";
-import { MdAddCircle } from "react-icons/md";
-import { AiFillCheckCircle, AiFillFolderAdd } from "react-icons/ai";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../Components/VideoListingCard/VideoListingCard.css";
-import { useState } from "react";
-import { useMainContext } from "../../Context/Index";
+import { useMainContext, useAuth } from "../../Context/Index";
 import { Modal } from "../../Components/Index";
+import { BsDot, BsThreeDotsVertical } from "react-icons/bs";
+import { MdAddCircle } from "react-icons/md";
+import { AiFillCheckCircle, AiFillFolderAdd } from "react-icons/ai";
+
 export const VideoCard = ({ item }) => {
   const { state, dispatch } = useMainContext();
+  const {
+    addToLikeVideos,
+    deleteFromLikeVideos,
+    addToWatchLater,
+    deleteFromWatchLater,
+    addToHistoryVideos,
+    deleteFromHistoryVideos,
+  } = useAuth();
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const videoCardDispatchHandler = (type, value) => {
@@ -59,7 +68,10 @@ export const VideoCard = ({ item }) => {
           <Link
             className="video-img-listing-page"
             to={`/video-listing-page/${item._id}`}
-            onClick={() => videoCardDispatchHandler("ADD_TO_HISTORY", item)}
+            onClick={() => {
+              addToHistoryVideos(item);
+              videoCardDispatchHandler("ADD_TO_HISTORY", item);
+            }}
           >
             <img
               src={item.img}
@@ -87,6 +99,7 @@ export const VideoCard = ({ item }) => {
                       <span
                         className="card-drawer-item-display"
                         onClick={() => {
+                          deleteFromWatchLater(item._id);
                           videoCardDispatchHandler(
                             "REMOVE_FROM_WATCH_LATER",
                             item
@@ -100,6 +113,7 @@ export const VideoCard = ({ item }) => {
                     ) : (
                       <span
                         onClick={() => {
+                          addToWatchLater(item);
                           videoCardDispatchHandler("ADD_TO_WATCH_LATER", item),
                             toast("Added to watch later.", { icon: "✔️" });
                         }}
@@ -115,10 +129,11 @@ export const VideoCard = ({ item }) => {
                     ) ? (
                       <span
                         onClick={() => {
-                          videoCardDispatchHandler(
-                            "REMOVE_FROM_LIKED_VIDEOS",
-                            item
-                          ),
+                          deleteFromLikeVideos(item._id),
+                            videoCardDispatchHandler(
+                              "REMOVE_FROM_LIKED_VIDEOS",
+                              item
+                            ),
                             toast("Removed from liked videos.", { icon: "❌" });
                         }}
                       >
@@ -128,6 +143,8 @@ export const VideoCard = ({ item }) => {
                     ) : (
                       <span
                         onClick={() => {
+                          addToLikeVideos(item);
+
                           videoCardDispatchHandler("ADD_TO_LIKED_VIDEOS", item),
                             toast("Added to watch later", { icon: "✔️" });
                         }}
