@@ -22,6 +22,7 @@ export const VideoListingPage = () => {
           </div>
         </div>
         <div className="flex category-chips-container">
+          {console.log(state.currentCategory)}
           <div
             className={`category-chips pointer ${
               state.currentCategory === "All" && "chip-default"

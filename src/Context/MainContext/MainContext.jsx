@@ -13,20 +13,16 @@ const MainContext = createContext([]);
 const MainContextProvider = ({ children }) => {
   const [category, setCategory] = useState([]);
   const [videos, setVideos] = useState([]);
-
   const [searchInput, setSearchInput] = useState("");
   const initialValueSidebar = {
     videoList: [],
     categoryList: [],
     currentCategory: "All",
     videoListByCategory: [],
-    watchLater: [],
-    playList: [],
-    likedVideos: [],
-    historyList: [],
   };
-  const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
 
+  const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
+  console.log(state);
   useEffect(() => {
     (async () => {
       try {
@@ -47,6 +43,7 @@ const MainContextProvider = ({ children }) => {
         const {
           data: { videos },
         } = await axios.get("/api/videos");
+        console.log(videos);
         setVideos(videos);
         dispatch({ type: "ASSIGN_VIDEOS", payload: videos });
       } catch {
@@ -58,6 +55,8 @@ const MainContextProvider = ({ children }) => {
   return (
     <MainContext.Provider
       value={{
+        category,
+        videos,
         searchInput,
         setSearchInput,
         state,

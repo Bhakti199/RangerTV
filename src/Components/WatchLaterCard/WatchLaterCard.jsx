@@ -2,11 +2,9 @@ import React from "react";
 import { BsDot, BsX } from "react-icons/bs";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
-import { useMainContext, useAuth } from "../../Context/Index";
-import toast from "react-hot-toast";
+import { useAuth } from "../../Context/Index";
 export const WatchLaterCard = ({ videoList, title }) => {
-  const { dispatch } = useMainContext();
-  const { deleteVideoCategory } = useAuth();
+  const { deleteVideoFromPlaylist } = useAuth();
   return (
     <>
       {videoList.length > 0 &&
@@ -31,13 +29,7 @@ export const WatchLaterCard = ({ videoList, title }) => {
               </p>
             </div>
             <button className="watch-later-cancel-button">
-              <BsX
-                onClick={() => {
-                  deleteVideoCategory(video._id, title);
-                  dispatch({ type: `REMOVE_FROM_${title}`, payload: video }),
-                    toast(`Removed from ${title}.`, { icon: "❌" });
-                }}
-              />
+              <BsX onClick={() => deleteVideoFromPlaylist(video._id, title)} />
             </button>
           </div>
         ))}

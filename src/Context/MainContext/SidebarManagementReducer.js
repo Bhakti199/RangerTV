@@ -1,11 +1,9 @@
-import {
-  addToVideoList,
-  removeFromVideoList,
-  addToPlayList,
-  removeFromPlayList,
-  FilterVideoListByCategory,
-} from "./SidebarManagementUtils";
 export const sidebarManagement = (state, action) => {
+  const FilterVideoListByCategory = (currentCategory, videoList) => {
+    if (currentCategory === "All") return videoList;
+    return videoList.filter((video) => video.categoryName === currentCategory);
+  };
+
   switch (action.type) {
     case "ASSIGN_VIDEOS":
       return {
@@ -26,54 +24,6 @@ export const sidebarManagement = (state, action) => {
           action.payload,
           state.videoList
         ),
-      };
-    case "ADD_TO_LIKED_VIDEOS":
-      return {
-        ...state,
-        likedVideos: addToVideoList(state.likedVideos, action.payload),
-      };
-    case "REMOVE_FROM_LIKED_VIDEOS":
-      return {
-        ...state,
-        likedVideos: removeFromVideoList(state.likedVideos, action.payload),
-      };
-    case "ADD_TO_WATCH_LATER":
-      return {
-        ...state,
-        watchLater: addToVideoList(state.watchLater, action.payload),
-      };
-    case "REMOVE_FROM_WATCH_LATER":
-      return {
-        ...state,
-        watchLater: removeFromVideoList(state.watchLater, action.payload),
-      };
-    case "ADD_TO_PLAYLIST":
-      return {
-        ...state,
-        playList: addToPlayList(
-          state.playList,
-          action.payload.title,
-          action.payload.video
-        ),
-      };
-    case "REMOVE_FROM_PLAYLIST":
-      return {
-        ...state,
-        playList: removeFromPlayList(
-          state.playList,
-          action.payload.title,
-          action.payload.video
-        ),
-      };
-    case "ADD_TO_HISTORY":
-      return {
-        ...state,
-        historyList: addToVideoList(state.historyList, action.payload),
-      };
-    case "REMOVE_FROM_HISTORY":
-      return {
-        ...state,
-        historyList: removeFromVideoList(state.historyList, action.payload),
       };
   }
 };

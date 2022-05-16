@@ -6,3 +6,7 @@ export { postWatchLaterVideoCall } from "./WatchLaterVideoCalls/PostWatchLaterVi
 export { deleteWatchLaterVideoCall } from "./WatchLaterVideoCalls/DeleteWatchLaterVideoCall";
 export { postHistoryVideoCall } from "./HistoryVideosCalls/PostHistoryVideoCall";
 export { deleteHistoryVideoCall } from "./HistoryVideosCalls/DeleteHistoryVideoCall";
+export { postPlaylistcall } from "./PLaylistCalls/PostPlaylistCall";
+export { deletePlaylistCall } from "./PLaylistCalls/DeletePlaylistCall";
+export { postNewVideoIntoPlaylist } from "./PLaylistCalls/PostNewVideoIntoPlaylistCall";
+export { deleteVideoFromPlaylistCall } from "./PLaylistCalls/DeleteVideoFromPlaylistCall";
