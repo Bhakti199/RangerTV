@@ -7,7 +7,7 @@ export const WatchLaterCard = ({ videoList, title }) => {
   const { deleteVideoFromPlaylist } = useAuth();
   return (
     <>
-      {videoList.length > 0 &&
+      {videoList && videoList.length > 0 ? (
         videoList.map((video) => (
           <div className="watch-later-card">
             <Link to={`/video-listing-page/${video._id}`}>
@@ -32,7 +32,20 @@ export const WatchLaterCard = ({ videoList, title }) => {
               <BsX onClick={() => deleteVideoFromPlaylist(video._id, title)} />
             </button>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="empty-watchlater-text">
+          {(title === "LIKED_VIDEOS" || title === "WATCH_LATER") &&
+            `There is nothing in ${
+              title === "LIKED_VIDEOS" ? "liked videos" : "watchlater"
+            }, Explore shows to add into ${
+              title === "LIKED_VIDEOS" ? "liked videos" : "watchlater"
+            }.`}
+          {title === "HISTORY_VIDEOS" && (
+            <div className="empty-watchlater-text">Nothing in History</div>
+          )}
+        </div>
+      )}
     </>
   );
 };

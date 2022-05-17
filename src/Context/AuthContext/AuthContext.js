@@ -133,6 +133,7 @@ const AuthProvider = ({ children }) => {
         console.log(playlistToAdd);
         if (status === 200 || status === 201) {
           setUserInfo((prevUserInfo) => ({ ...prevUserInfo, playlists }));
+          toast("PLaylist added.");
         }
       }
     } else {

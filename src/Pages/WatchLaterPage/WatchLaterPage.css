@@ -61,6 +61,12 @@
 .watch-later-cancel-button:hover {
   opacity: 1;
 }
+.empty-watchlater-text {
+  color: var(--white-color);
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
 @media screen and (max-width: 900px) {
   .watch-later-page {
     margin-left: 0;

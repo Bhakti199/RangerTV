@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 import { getUserCall } from "../../ApiCalls";
 import { useAuth } from "../../Context/Index";
 import "./Auth.css";
@@ -16,6 +17,7 @@ export const LoginPage = () => {
       setUserInfo({ ...data.foundUser });
       localStorage.setItem("userLoginToken", data.encodedToken);
       navigate(location?.state?.from?.pathname || "/video-listing-page");
+      toast("Successfully logged in.");
     }
   };
 
@@ -34,9 +36,8 @@ export const LoginPage = () => {
     <div className="auth-page">
       {isUserLoggedIn ? (
         <>
-          <div style={{ color: "white" }}>User Profile page will be here.</div>
           <button
-            style={{ color: "white", border: "1px solid white" }}
+            className="logout-button"
             onClick={() => {
               setIsUserLoggedIn(false);
               localStorage.removeItem("userLoginToken");

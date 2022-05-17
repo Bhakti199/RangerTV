@@ -42,9 +42,10 @@ export const Modal = ({ setOpenModal, item }) => {
                 <div
                   key={index}
                   className="card-drawer-item margin-top-bottom-zero flex pointer"
-                  onClick={() =>
-                    deleteVideoFromPlaylist(playlist._id, item._id)
-                  }
+                  onClick={() => {
+                    deleteVideoFromPlaylist(playlist._id, item._id);
+                    setOpenModal(false);
+                  }}
                 >
                   <AiFillCheckCircle />
                   Remove from {playlist.title}
@@ -53,7 +54,10 @@ export const Modal = ({ setOpenModal, item }) => {
                 <div
                   key={index}
                   className="card-drawer-item margin-top-bottom-zero flex pointer"
-                  onClick={() => addVideoToPlaylist(playlist._id, item)}
+                  onClick={() => {
+                    addVideoToPlaylist(playlist._id, item);
+                    setOpenModal(false);
+                  }}
                 >
                   <AiFillFolderAdd />
                   Add to {playlist.title}

@@ -11,7 +11,11 @@ export const PlayListPage = () => {
   return (
     <div className="playlist-page">
       <div className=" playlist-option-container">
-        {playlists &&
+        {playlists && playlists.length === 0 ? (
+          <div className="empty-playlist-page-text">
+            There is nothing in playlists, explore shows to add playlists.
+          </div>
+        ) : (
           playlists.map((playlist) => (
             <div key={playlist._id}>
               <h2 className="green playlist-title">
@@ -28,7 +32,8 @@ export const PlayListPage = () => {
                 />
               </div>
             </div>
-          ))}
+          ))
+        )}
       </div>
     </div>
   );

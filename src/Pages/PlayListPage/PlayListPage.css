@@ -33,6 +33,13 @@
   gap: 1rem;
   padding: 10px 0;
 }
+.empty-playlist-page-text {
+  text-align: center;
+  color: var(--green-color);
+  margin: auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
 @media screen and (max-width: 900px) {
   .playlist-page {
     margin-left: 0;

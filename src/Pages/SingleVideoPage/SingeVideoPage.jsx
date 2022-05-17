@@ -40,39 +40,11 @@ export const SingeVideoPage = () => {
 
             <div className="video-iframe-icons-container flex">
               <span className="video-iframe-icons flex">
-                {state.likedVideos &&
-                state.likedVideos.length > 0 &&
-                state.likedVideos.some(
-                  (element) => element._id === video?._id
-                ) ? (
-                  <AiFillLike size={30} color="var(--green-color)" />
-                ) : (
-                  <AiOutlineLike size={30} color="var(--green-color)" />
-                )}
-              </span>
-              <span className="video-iframe-icons flex">
-                {state.likedVideos &&
-                state.likedVideos.length > 0 &&
-                state.watchLater.some(
-                  (element) => element._id === video?._id
-                ) ? (
-                  <BsFillBookmarkDashFill
-                    size={23}
-                    color="var(--green-color)"
-                  />
-                ) : (
-                  <BsFillBookmarkFill size={23} color="var(--green-color)" />
-                )}
-              </span>
-              <span className="video-iframe-icons flex">
                 <BsCollectionPlayFill
                   size={23}
                   color="var(--green-color)"
                   onClick={() => setSinglePageModal(true)}
                 />
-              </span>
-              <span className="video-iframe-icons flex">
-                <FaShare size={25} color="var(--green-color)" />
               </span>
 
               {singlePageModal && (
