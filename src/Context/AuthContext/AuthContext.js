@@ -126,11 +126,9 @@ const AuthProvider = ({ children }) => {
         toast("Please, Enter input for title.");
       } else {
         const { playlists, status } = await postPlaylistcall(playlistTitle);
-        console.log(playlists);
         let playlistToAdd = playlists.find(
           (item) => item.title === playlistTitle
         );
-        console.log(playlistToAdd);
         if (status === 200 || status === 201) {
           setUserInfo((prevUserInfo) => ({ ...prevUserInfo, playlists }));
           toast("PLaylist added.");
@@ -169,9 +167,7 @@ const AuthProvider = ({ children }) => {
       value={{
         isUserLoggedIn,
         setIsUserLoggedIn,
-
         userInfo,
-
         setUserInfo,
         addToLikeVideos,
         deleteFromLikeVideos,

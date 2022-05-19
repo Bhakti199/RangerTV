@@ -21,7 +21,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           HOME
         </Link>
         <Link
-          to="/"
+          to="/login"
           className="hamburgur-menu-item flex-row-only"
           onClick={() => setIsOpen((prevState) => !prevState)}
         >

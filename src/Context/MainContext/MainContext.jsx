@@ -22,7 +22,6 @@ const MainContextProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
-  console.log(state);
   useEffect(() => {
     (async () => {
       try {
@@ -43,7 +42,6 @@ const MainContextProvider = ({ children }) => {
         const {
           data: { videos },
         } = await axios.get("/api/videos");
-        console.log(videos);
         setVideos(videos);
         dispatch({ type: "ASSIGN_VIDEOS", payload: videos });
       } catch {

@@ -28,7 +28,6 @@ export const Modal = ({ setOpenModal, item }) => {
             className="pointer"
             onClick={() => {
               addPlaylist(playlistInput, item);
-              setOpenModal(false);
             }}
           >
             <MdAddCircle size="25" />
