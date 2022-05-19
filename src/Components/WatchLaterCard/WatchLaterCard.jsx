@@ -2,14 +2,12 @@ import React from "react";
 import { BsDot, BsX } from "react-icons/bs";
 import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
-import { useMainContext, useAuth } from "../../Context/Index";
-import toast from "react-hot-toast";
+import { useAuth } from "../../Context/Index";
 export const WatchLaterCard = ({ videoList, title }) => {
-  const { dispatch } = useMainContext();
-  const { deleteVideoCategory } = useAuth();
+  const { deleteVideoFromPlaylist } = useAuth();
   return (
     <>
-      {videoList.length > 0 &&
+      {videoList && videoList.length > 0 ? (
         videoList.map((video) => (
           <div className="watch-later-card">
             <Link to={`/video-listing-page/${video._id}`}>
@@ -31,16 +29,23 @@ export const WatchLaterCard = ({ videoList, title }) => {
               </p>
             </div>
             <button className="watch-later-cancel-button">
-              <BsX
-                onClick={() => {
-                  deleteVideoCategory(video._id, title);
-                  dispatch({ type: `REMOVE_FROM_${title}`, payload: video }),
-                    toast(`Removed from ${title}.`, { icon: "❌" });
-                }}
-              />
+              <BsX onClick={() => deleteVideoFromPlaylist(video._id, title)} />
             </button>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="empty-watchlater-text">
+          {(title === "LIKED_VIDEOS" || title === "WATCH_LATER") &&
+            `There is nothing in ${
+              title === "LIKED_VIDEOS" ? "liked videos" : "watchlater"
+            }, Explore shows to add into ${
+              title === "LIKED_VIDEOS" ? "liked videos" : "watchlater"
+            }.`}
+          {title === "HISTORY_VIDEOS" && (
+            <div className="empty-watchlater-text">Nothing in History</div>
+          )}
+        </div>
+      )}
     </>
   );
 };

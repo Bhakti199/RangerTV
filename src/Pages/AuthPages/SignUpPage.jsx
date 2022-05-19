@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { postNewUserCall } from "../../ApiCalls";
 import { useAuth } from "../../Context/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 import "./Auth.css";
 export const SignUpPage = () => {
   const { isUserLoggedIn, setIsUserLoggedIn, userInfo, setUserInfo } =
@@ -23,6 +24,7 @@ export const SignUpPage = () => {
       setUserInfo({ ...data.createdUser });
       localStorage.setItem("userLoginToken", data.encodedToken);
       navigate(location?.state?.from?.pathname || "/video-listing-page");
+      toast("Successfully Signed up.");
     }
   };
 

@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./SingleVideoPage.css";
-import { FaShare } from "react-icons/fa";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
-import toast from "react-hot-toast";
 import {
   BsDot,
   BsFillBookmarkDashFill,
@@ -11,12 +9,20 @@ import {
   BsCollectionPlayFill,
 } from "react-icons/bs";
 import { useParams } from "react-router-dom";
-import { useMainContext } from "../../Context/Index";
+import { useAuth, useMainContext } from "../../Context/Index";
 import { Sidebar, VideoCard, Modal } from "../../Components/Index";
 export const SingeVideoPage = () => {
+  const {
+    addToLikeVideos,
+    deleteFromLikeVideos,
+    addToWatchLater,
+    deleteFromWatchLater,
+    userInfo,
+  } = useAuth();
+  const { watchlater, likes } = userInfo;
   const [singlePageModal, setSinglePageModal] = useState(false);
   const videoId = useParams();
-  const { state, searchInput, dispatch } = useMainContext();
+  const { state, searchInput } = useMainContext();
   let video = state.videoList.find((item) => item._id === videoId.videoId);
 
   return (
@@ -41,54 +47,36 @@ export const SingeVideoPage = () => {
 
             <div className="video-iframe-icons-container flex">
               <span className="video-iframe-icons flex">
-                {state.likedVideos.some(
-                  (element) => element._id === video?._id
-                ) ? (
+                {likes &&
+                likes.length > 0 &&
+                likes.some((item) => item._id === video?._id) ? (
                   <AiFillLike
-                    size={30}
+                    size={23}
                     color="var(--green-color)"
-                    onClick={() => {
-                      dispatch({
-                        type: "REMOVE_FROM_LIKED_VIDEOS",
-                        payload: video,
-                      }),
-                        toast("Removed from Liked videos.", { icon: "❌" });
-                    }}
+                    onClick={() => deleteFromLikeVideos(video?._id)}
                   />
                 ) : (
                   <AiOutlineLike
-                    size={30}
+                    size={23}
                     color="var(--green-color)"
-                    onClick={() => {
-                      dispatch({ type: "ADD_TO_LIKED_VIDEOS", payload: video }),
-                        toast("Added to Liked later.", { icon: "✔️" });
-                    }}
+                    onClick={() => addToLikeVideos(video)}
                   />
                 )}
               </span>
               <span className="video-iframe-icons flex">
-                {state.watchLater.some(
-                  (element) => element._id === video?._id
-                ) ? (
+                {watchlater &&
+                watchlater.length > 0 &&
+                watchlater.some((item) => item._id === video?._id) ? (
                   <BsFillBookmarkDashFill
-                    size={23}
+                    size={19}
                     color="var(--green-color)"
-                    onClick={() => {
-                      dispatch({
-                        type: "REMOVE_FROM_WATCH_LATER",
-                        payload: video,
-                      }),
-                        toast("Removed from watch videos.", { icon: "❌" });
-                    }}
+                    onClick={() => deleteFromWatchLater(video?._id)}
                   />
                 ) : (
                   <BsFillBookmarkFill
-                    size={23}
+                    size={19}
                     color="var(--green-color)"
-                    onClick={() => {
-                      dispatch({ type: "ADD_TO_WATCH_LATER", payload: video }),
-                        toast("Added to watch later.", { icon: "✔️" });
-                    }}
+                    onClick={() => addToWatchLater(video)}
                   />
                 )}
               </span>
@@ -98,9 +86,6 @@ export const SingeVideoPage = () => {
                   color="var(--green-color)"
                   onClick={() => setSinglePageModal(true)}
                 />
-              </span>
-              <span className="video-iframe-icons flex">
-                <FaShare size={25} color="var(--green-color)" />
               </span>
 
               {singlePageModal && (

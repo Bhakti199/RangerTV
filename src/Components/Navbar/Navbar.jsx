@@ -7,9 +7,11 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { HamburgurMenuList } from "../Index";
 import { useMainContext } from "../../Context/Index";
+import { useLocation } from "react-router-dom";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { setSearchInput } = useMainContext();
+  const location = useLocation();
   return (
     <>
       <div className="nav">
@@ -29,17 +31,20 @@ export const Navbar = () => {
           <div className="navbar-title">RangerTV</div>
         </div>
 
-        <div className="search-input-container ">
-          <div className="search flex-row-only">
-            <BsSearch size={27} color="var(--green-color)" />
-            <input
-              className="search-input"
-              type="text"
-              placeholder="Explore..."
-              onChange={(event) => setSearchInput(event.target.value)}
-            />
+        {location.pathname === "/video-listing-page" && (
+          <div className="search-input-container ">
+            <div className="search flex-row-only">
+              <BsSearch size={27} color="var(--green-color)" />
+              <input
+                className="search-input"
+                type="text"
+                placeholder="Explore..."
+                onChange={(event) => setSearchInput(event.target.value)}
+              />
+            </div>
           </div>
-        </div>
+        )}
+
         <Link to="/login" className="flex-col login-nav">
           <FaUserAlt size={27} color="var(--green-color)" />
         </Link>

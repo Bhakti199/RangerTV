@@ -13,20 +13,15 @@ const MainContext = createContext([]);
 const MainContextProvider = ({ children }) => {
   const [category, setCategory] = useState([]);
   const [videos, setVideos] = useState([]);
-
   const [searchInput, setSearchInput] = useState("");
   const initialValueSidebar = {
     videoList: [],
     categoryList: [],
     currentCategory: "All",
     videoListByCategory: [],
-    watchLater: [],
-    playList: [],
-    likedVideos: [],
-    historyList: [],
   };
-  const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
 
+  const [state, dispatch] = useReducer(sidebarManagement, initialValueSidebar);
   useEffect(() => {
     (async () => {
       try {
@@ -58,6 +53,8 @@ const MainContextProvider = ({ children }) => {
   return (
     <MainContext.Provider
       value={{
+        category,
+        videos,
         searchInput,
         setSearchInput,
         state,

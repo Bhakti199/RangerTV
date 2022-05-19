@@ -76,13 +76,12 @@
 .card-drawer-item {
   gap: 5px;
   padding: 10px;
-  font-weight: 400;
 }
 .card-drawer-item-display {
   display: flex;
   align-items: center;
   gap: 3px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .playlist-input {
   margin: 0 1rem;

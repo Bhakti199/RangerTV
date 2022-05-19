@@ -15,20 +15,6 @@ body {
   --lightest-green: #137363;
   --off-green: #13726b;
   --white-color: #fefeff;
-  /* ******************************* */
-
-  --purple-medium: #a21caf;
-  --purple-dark: #d946ef;
-  --purple-light: #e879f9;
-  --purple-lighter: #f0abfc;
-  --bg-color: #fae8ff;
-  --grey-light: #d6d3d1;
-  --stone-black: #57534e;
-  --grey-lighter: #cbd5e1;
-  --black-color: #1e293b;
-  --grey-medium: #4b5563;
-  --red-color: #dc2626;
-  --off-purple: #fdf4ff;
 }
 .flex {
   display: flex;

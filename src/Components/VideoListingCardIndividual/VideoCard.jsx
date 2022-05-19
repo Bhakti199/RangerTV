@@ -1,66 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import "../../Components/VideoListingCard/VideoListingCard.css";
-import { useMainContext, useAuth } from "../../Context/Index";
+import { useAuth } from "../../Context/Index";
 import { Modal } from "../../Components/Index";
 import { BsDot, BsThreeDotsVertical } from "react-icons/bs";
 import { MdAddCircle } from "react-icons/md";
-import { AiFillCheckCircle, AiFillFolderAdd } from "react-icons/ai";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 export const VideoCard = ({ item }) => {
-  const { state, dispatch } = useMainContext();
   const {
     addToLikeVideos,
     deleteFromLikeVideos,
     addToWatchLater,
     deleteFromWatchLater,
     addToHistoryVideos,
-    deleteFromHistoryVideos,
+    userInfo,
   } = useAuth();
+  const { watchlater, likes } = userInfo;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const videoCardDispatchHandler = (type, value) => {
-    switch (type) {
-      case "REMOVE_FROM_WATCH_LATER":
-        dispatch({
-          type: "REMOVE_FROM_WATCH_LATER",
-          payload: value,
-        });
-        break;
 
-      case "ADD_TO_WATCH_LATER":
-        dispatch({
-          type: "ADD_TO_WATCH_LATER",
-          payload: value,
-        });
-        break;
-
-      case "REMOVE_FROM_LIKED_VIDEOS":
-        dispatch({
-          type: "REMOVE_FROM_LIKED_VIDEOS",
-          payload: value,
-        });
-        break;
-
-      case "ADD_TO_LIKED_VIDEOS":
-        dispatch({
-          type: "ADD_TO_LIKED_VIDEOS",
-          payload: value,
-        });
-        break;
-      case "ADD_TO_PLAYLIST":
-        dispatch({
-          type: "ADD_TO_PLAYLIST",
-          payload: value,
-        });
-        break;
-      default:
-        break;
-    }
-    setIsDrawerOpen(!isDrawerOpen);
-  };
   return (
     <>
       <div className="flex-row" key={item.id}>
@@ -68,10 +28,7 @@ export const VideoCard = ({ item }) => {
           <Link
             className="video-img-listing-page"
             to={`/video-listing-page/${item._id}`}
-            onClick={() => {
-              addToHistoryVideos(item);
-              videoCardDispatchHandler("ADD_TO_HISTORY", item);
-            }}
+            onClick={() => addToHistoryVideos(item)}
           >
             <img
               src={item.img}
@@ -93,30 +50,20 @@ export const VideoCard = ({ item }) => {
               {isDrawerOpen && (
                 <div className="card-drawer-section flex">
                   <div className="card-drawer-item margin-top-bottom-zero flex">
-                    {state.watchLater.some(
-                      (video) => video._id === item._id
-                    ) ? (
+                    {watchlater &&
+                    watchlater.length > 0 &&
+                    watchlater.some((video) => video._id === item._id) ? (
                       <span
-                        className="card-drawer-item-display"
-                        onClick={() => {
-                          deleteFromWatchLater(item._id);
-                          videoCardDispatchHandler(
-                            "REMOVE_FROM_WATCH_LATER",
-                            item
-                          ),
-                            toast("Removed from watch later.", { icon: "❌" });
-                        }}
+                        className="card-drawer-item-display pointer"
+                        onClick={() => deleteFromWatchLater(item._id)}
                       >
                         <AiFillCheckCircle />
                         Remove from watch later
                       </span>
                     ) : (
                       <span
-                        onClick={() => {
-                          addToWatchLater(item);
-                          videoCardDispatchHandler("ADD_TO_WATCH_LATER", item),
-                            toast("Added to watch later.", { icon: "✔️" });
-                        }}
+                        className="card-drawer-item-display pointer"
+                        onClick={() => addToWatchLater(item)}
                       >
                         <MdAddCircle />
                         Watch later
@@ -124,30 +71,20 @@ export const VideoCard = ({ item }) => {
                     )}
                   </div>
                   <div className="card-drawer-item margin-top-bottom-zero flex">
-                    {state.likedVideos.some(
-                      (video) => video._id === item._id
-                    ) ? (
+                    {likes &&
+                    likes.length > 0 &&
+                    likes.some((video) => video._id === item._id) ? (
                       <span
-                        onClick={() => {
-                          deleteFromLikeVideos(item._id),
-                            videoCardDispatchHandler(
-                              "REMOVE_FROM_LIKED_VIDEOS",
-                              item
-                            ),
-                            toast("Removed from liked videos.", { icon: "❌" });
-                        }}
+                        className="card-drawer-item-display pointer"
+                        onClick={() => deleteFromLikeVideos(item._id)}
                       >
                         <AiFillCheckCircle />
                         Dislike video
                       </span>
                     ) : (
                       <span
-                        onClick={() => {
-                          addToLikeVideos(item);
-
-                          videoCardDispatchHandler("ADD_TO_LIKED_VIDEOS", item),
-                            toast("Added to watch later", { icon: "✔️" });
-                        }}
+                        className="card-drawer-item-display pointer"
+                        onClick={() => addToLikeVideos(item)}
                       >
                         <MdAddCircle />
                         Like videos
@@ -157,6 +94,7 @@ export const VideoCard = ({ item }) => {
                   <div className="card-drawer-item margin-top-bottom-zero flex">
                     <MdAddCircle />
                     <span
+                      className="card-drawer-item-display pointer"
                       onClick={() => {
                         setOpenModal(true), setIsDrawerOpen(false);
                       }}

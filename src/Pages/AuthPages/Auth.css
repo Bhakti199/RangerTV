@@ -61,6 +61,13 @@
   font-size: 1.4rem;
   letter-spacing: 1px;
 }
+.logout-button {
+  border: none;
+  color: var(--background-color);
+  background-color: var(--green-color);
+  padding: 10px 2rem;
+  font-size: 1.4rem;
+}
 @media screen and (max-width: 900px) {
   .auth-page {
     margin-left: 0;
