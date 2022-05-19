@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const navigate = useNavigate();
+
   const deleteVideoCategory = (videoId, title) => {
     switch (title) {
       case "WATCH_LATER":

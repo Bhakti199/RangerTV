@@ -4,12 +4,13 @@ import "../../Pages/WatchLaterPage/WatchLaterPage.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/Index";
 export const WatchLaterCard = ({ videoList, title }) => {
-  const { deleteVideoFromPlaylist } = useAuth();
+  const { deleteVideoCategory } = useAuth();
+
   return (
     <>
       {videoList && videoList.length > 0 ? (
         videoList.map((video) => (
-          <div className="watch-later-card">
+          <div className="watch-later-card" key={video._id}>
             <Link to={`/video-listing-page/${video._id}`}>
               <img
                 src={video.img}
@@ -28,8 +29,9 @@ export const WatchLaterCard = ({ videoList, title }) => {
                 {video.date}
               </p>
             </div>
+
             <button className="watch-later-cancel-button">
-              <BsX onClick={() => deleteVideoFromPlaylist(video._id, title)} />
+              <BsX onClick={() => deleteVideoCategory(video._id, title)} />
             </button>
           </div>
         ))
