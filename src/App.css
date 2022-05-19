@@ -3,8 +3,7 @@ div.toast {
   height: 2rem;
   display: flex;
   text-align: left;
-  background-color: var(--bg-color);
-  border-bottom: 7px solid var(--purple-dark);
+  background-color: var(--green-color);
   box-shadow: 4px 6px 10px 4px rgb(0 0 0 / 10%);
 }
 div.toast div {

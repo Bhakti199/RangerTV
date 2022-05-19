@@ -36,6 +36,7 @@ export const signupHandler = function (schema, request) {
       updatedAt: formatDate(),
       ...rest,
       likes: [],
+      watchlater: [],
       history: [],
       playlists: [],
     };

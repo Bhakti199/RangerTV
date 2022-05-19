@@ -4,10 +4,10 @@
   height: 100vh;
   position: fixed;
   left: 0;
-  top: 5.7rem;
+  top: 5rem;
   align-items: center;
-  box-shadow: 2px 4px 7px 2px rgb(0 0 0 / 10%);
-  background-color: var(--white-color);
+  color: var(--green-color);
+  background-color: var(--background-color);
 }
 .sidebar {
   padding-left: 0;
@@ -22,9 +22,6 @@
 }
 .sidebar-item-text {
   font-size: 0.8rem;
-}
-.sidebar-item:hover {
-  color: var(--purple-medium);
 }
 @media screen and (max-width: 900px) {
   .sidebar-container {

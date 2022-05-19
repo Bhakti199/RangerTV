@@ -16,6 +16,11 @@
   background-color: var(--purple-light);
   transition: 0.3s ease-in-out;
 }
+.playlist-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
 .playlist-option-block:hover {
   transform: scale(1.1);
@@ -27,6 +32,13 @@
   overflow-x: auto;
   gap: 1rem;
   padding: 10px 0;
+}
+.empty-playlist-page-text {
+  text-align: center;
+  color: var(--green-color);
+  margin: auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 @media screen and (max-width: 900px) {
   .playlist-page {

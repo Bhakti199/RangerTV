@@ -18,15 +18,15 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <HiHome />
-          Home
+          HOME
         </Link>
         <Link
-          to="/"
+          to="/login"
           className="hamburgur-menu-item flex-row-only"
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <FaUserAlt />
-          Login/SignUp
+          LOGIN
         </Link>
 
         <Link
@@ -35,7 +35,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <MdVideoLibrary />
-          Explore shows
+          EXPLORE SHOWS
         </Link>
         <Link
           to="/playlists"
@@ -43,7 +43,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <RiPlayList2Fill />
-          PlayList
+          PLAYLIST
         </Link>
         <Link
           to="/watch-later"
@@ -51,7 +51,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <BsFillBookmarkFill />
-          Watch Later
+          WATCH LATER
         </Link>
         <Link
           to="/liked-videos"
@@ -59,7 +59,7 @@ export const HamburgurMenuList = ({ setIsOpen }) => {
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
           <AiFillLike />
-          Liked videos
+          LIKED VIDEOS
         </Link>
       </ul>
     </div>

@@ -1,25 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   font-size: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
+  background-color: var(--background-color);
 }
 :root {
-  --white-color: white;
-  --purple-medium: #a21caf;
-  --purple-dark: #d946ef;
-  --purple-light: #e879f9;
-  --purple-lighter: #f0abfc;
-  --bg-color: #fae8ff;
-  --grey-light: #d6d3d1;
-  --stone-black: #57534e;
-  --grey-lighter: #cbd5e1;
-  --black-color: #27272a;
-  --grey-medium: #4b5563;
-  --red-color: #dc2626;
-  --off-purple: #fdf4ff;
+  --background-color: #161729;
+  --green-color: #22fcd0;
+  --light-green: #229081;
+  --lightest-green: #137363;
+  --off-green: #13726b;
+  --white-color: #fefeff;
 }
 .flex {
   display: flex;
@@ -62,7 +57,6 @@ button {
   background-color: transparent;
 }
 button:hover {
-  filter: brightness(75%);
   cursor: pointer;
 }
 .link {
@@ -70,7 +64,7 @@ button:hover {
   cursor: pointer;
 }
 .link-color {
-  color: var(--black-color);
+  color: var(--green-color);
 }
 .link:hover {
   cursor: pointer;
@@ -81,8 +75,14 @@ button:hover {
 .pointer {
   cursor: pointer;
 }
-.black {
-  color: var(--black-color);
+.green {
+  color: var(--green-color);
+}
+.light-green {
+  color: var(--light-green);
+}
+.white {
+  color: var(--white-color);
 }
 @media screen and (max-width: 600px) {
   html {

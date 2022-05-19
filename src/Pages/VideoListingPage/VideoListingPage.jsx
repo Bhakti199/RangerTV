@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Sidebar, VideoListingCard } from "../../Components/Index";
+import { VideoListingCard } from "../../Components/Index";
 import { BsSearch } from "react-icons/bs";
 import "./VideoListingPage.css";
 import { useMainContext } from "../../Context/Index";
@@ -7,12 +7,11 @@ export const VideoListingPage = () => {
   const { setSearchInput, state, dispatch } = useMainContext();
   return (
     <>
-      <Sidebar className="sidebar-display" />
       <div className="video-listing-page">
         <div className="flex-row">
           <div className="search-input-container-two ">
             <div className="search flex-row-only">
-              <BsSearch className="search-icon " />
+              <BsSearch size={22} color="var(--green-color)" />
               <input
                 className="search-input"
                 type="text"
@@ -47,7 +46,6 @@ export const VideoListingPage = () => {
                   type: "SET_CURRENT_CATEGORY",
                   payload: item.categoryName,
                 });
-                console.log(item.categoryName);
               }}
             >
               {item.categoryName}

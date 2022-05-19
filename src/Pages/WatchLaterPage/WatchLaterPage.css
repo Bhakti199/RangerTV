@@ -1,5 +1,5 @@
 .watch-later-page {
-  margin-top: 5.7rem;
+  margin-top: 5rem;
   margin-left: 7rem;
   width: auto;
   min-height: 85vh;
@@ -10,6 +10,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+}
+.watch-later-title {
+  color: var(--green-color);
 }
 .watch-later-card {
   height: 12rem;
@@ -45,8 +48,8 @@
 .watch-later-cancel-button {
   font-size: 1.8rem;
   padding: 1px;
-  background-color: var(--red-color);
-  color: var(--white-color);
+  background-color: var(--light-green);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +60,12 @@
 }
 .watch-later-cancel-button:hover {
   opacity: 1;
+}
+.empty-watchlater-text {
+  color: var(--white-color);
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
 }
 @media screen and (max-width: 900px) {
   .watch-later-page {

@@ -4,7 +4,6 @@ import { useMainContext } from "../../Context/Index";
 import { VideoCard } from "../VideoListingCardIndividual/VideoCard";
 export const VideoListingCard = () => {
   const { state, searchInput } = useMainContext();
-  console.log(searchInput);
   return (
     <div className="card-display-grid">
       {searchInput === ""

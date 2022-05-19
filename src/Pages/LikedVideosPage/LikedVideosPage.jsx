@@ -3,21 +3,16 @@ import { Sidebar, WatchLaterCard } from "../../Components/Index";
 
 import "../WatchLaterPage/WatchLaterPage.css";
 import "../../Components/VideoListingCard/VideoListingCard.css";
-import { useMainContext } from "../../Context/Index";
+import { useAuth } from "../../Context/Index";
 export const LikedVideosPage = () => {
-  const { state } = useMainContext();
-
+  const { userInfo } = useAuth();
+  const { likes } = userInfo;
   return (
     <div>
-      <Sidebar />
-
       <div className="watch-later-page">
-        <h2 className="black">Liked Videos</h2>
+        <h2 className="green">Liked Videos</h2>
         <div className="watch-later-container">
-          <WatchLaterCard
-            videoList={state.likedVideos}
-            title={"LIKED_VIDEOS"}
-          />
+          <WatchLaterCard videoList={likes} title={"LIKED_VIDEOS"} />
         </div>
       </div>
     </div>
