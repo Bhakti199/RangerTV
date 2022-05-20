@@ -7,8 +7,12 @@ live link : https://ranger-tv.netlify.app/
 
 - ### Home Page
 
-  - A Banner with a options to select genres button to Explore page.
+  - A Video which leads to Explore page on click.
 
+- ### Auth Pages
+
+  - This includes login and sign up pages.
+  
 - ### Explore Page
 
   - A video listing page where all the videoss are listed with a section to select categories.
